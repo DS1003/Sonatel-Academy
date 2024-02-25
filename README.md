@@ -44,4 +44,13 @@ Here are some ideas to get you started:
 - 💬 Ask me about ...
 - 📫 How to reach me: ...
 
+
+
+echo "# Sonatel-Academy" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/DS1003/Sonatel-Academy.git
+git push -u origin main
 -->
