@@ -51,7 +51,7 @@ int main() {
                     printf("Erreur: La note doit être comprise entre 0 et 20.\n");
                     i--;
                 }
-                //Comparaison des deux plus petites notes le dernier et l'avant dernier
+                //Comparaison des deux plus grandes notes le dernier et l'avant dernier
                 if (note < min && note >= 0){
                     mil= min;
                     min  = note;
@@ -62,7 +62,7 @@ int main() {
                 }
             }
 
-            printf("\nLes deux plus petites notes sont : %.1f et %.1f\n", mil, min);
+            printf("\nLes deux plus grandes notes sont : %.1f et %.1f\n", mil, min);
         }
         //------------------------------------------------ Choix 3 -----------------------------------------------------------------------------
         if  (ch == 3) {
