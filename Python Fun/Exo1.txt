@@ -1,0 +1,11 @@
+# Exercice:
+# Ecrit un programme qui demande a un utilisateur d'entrer son âge,
+# puis en fonction de la tranche d'âge (mineur ou majeur), le programme attribut a l'utilisateur le prix du ticket.
+# Le programme lui demande par la suite s'il veut occuper une place VIP, si oui le programme ajoute le prix de la place VIP
+# au prix du ticket. En fin le programme demande a l'utilisateur s'il désire prendre des pops corn, si oui le programme incrémente
+# le prix des pops corn et affiche a la fin la somme totale que l'utilisateur doit payer.
+
+# Ticket majeur :4.000f FCA
+# Ticket mineur :3.000f FCA
+# Place VIP :1.000f CFA
+# Pops corn : 500f CFA

@@ -1,0 +1,182 @@
+/* styles.css */
+header {
+    background-color: #ffffff;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 2px solid black;
+}
+
+.logo img {
+    width: 100px; /* Ajustez la taille du logo selon vos besoins */
+    height: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Utilisez Flexbox pour centrer les pages de la barre de navigation */
+    justify-content: center; /* Centrez horizontalement les pages de la barre de navigation */
+}
+
+nav ul li {
+    display: inline;
+    margin: 20px;
+}
+
+/* Style pour les liens de la barre de navigation */
+nav a {
+    text-decoration: none;
+    color: black; /* Couleur des liens non sélectionnés */
+    font-size: 20px;
+    font-style: bold;
+}
+
+/* Style pour le lien de la page sélectionnée */
+nav a.selected {
+    color: rgb(0, 0, 214); /* Couleur du lien sélectionné (bleu marine) */
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    margin-right: 50px; /* Marge à droite */
+}
+
+.social-icons a {
+    margin-left: 20px; /* Marge entre les icônes de médias sociaux */
+}
+
+.banner {
+    text-align: center;
+    padding: 50px;
+}
+
+.banner img {
+    width: 100%;
+    max-width: 2200px;
+}
+
+.bordered-section {
+    border: solid #000000 1px;
+    text-align: center;
+    padding: 20px;
+    max-width: 1380px; /* Définissez la largeur maximale souhaitée */
+    margin: 0 auto; /* Centrez la section horizontalement */
+}
+
+.card-section {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap; /* Évitez le retour à la ligne */
+    justify-content: space-between;
+}
+
+.card {
+    width: calc(33.33% - 20px); /* Pour 3 cartes par ligne avec espacement */
+    margin: 10px;
+    padding: 10px;
+    text-align: left;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card-testimonial {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap; /* Évitez le retour à la ligne */
+    justify-content: space-between;
+}
+
+.testimonial {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.testimonial-image img {
+    width: 600px;
+    border-radius: 1%;
+    margin-right: 20px;
+}
+
+.testimonial-text {
+    text-align: justify;
+    margin-left: 40px;
+}
+
+footer {
+    border-top: 2px solid black;
+    padding: 20px 0;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-logo img {
+    width: 100px; /* Ajustez la taille du logo selon vos besoins */
+    height: auto;
+    
+}
+
+.footer-categories, .footer-menu {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-categories h4, .footer-menu h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-categories ul, .footer-menu ul {
+    list-style-type: none !important;
+    padding: 0;
+    color: #000000;
+}
+
+.footer-categories ul li, .footer-menu ul li {
+    margin: 10px 0;
+}
+
+.footer-social-icons {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.footer-social-icons a {
+    margin-left: 10px; /* Marge entre les icônes de médias sociaux */
+}
+
+.footer-divider {
+    border-top: 2px solid black;
+    margin: 20px 0;
+}
+
+.footer-copyright {
+    font-size: 14px;
+}
