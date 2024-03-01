@@ -1,0 +1,22 @@
+//une fonction qui permet de saisir un nombre et test si la somme  des chiffres de ce nombre est égale au nombre
+#ifndef PERSOLIB_INCLUDED
+#define PERSOLIB_INCLUDED
+
+int somchiffre (int);
+int saisie  (void); 
+int comparaison(int, int);
+int ispremier (int);
+void gameprime (int tofind);
+int generer (void);
+void trianglerectangle (int);
+void rectangle2 (int, int);
+void triangleisocele (int);
+void carre (int);
+int saisie12();
+void saisieglobal();
+void menuview();
+void changerCouleurPolice(int);
+int choisirCouleur();
+
+
+#endif
