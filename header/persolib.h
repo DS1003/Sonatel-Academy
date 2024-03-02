@@ -1,4 +1,3 @@
-//une fonction qui permet de saisir un nombre et test si la somme  des chiffres de ce nombre est égale au nombre
 #ifndef PERSOLIB_INCLUDED
 #define PERSOLIB_INCLUDED
 
