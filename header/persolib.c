@@ -81,6 +81,7 @@ void gameprime (int tofind){
     } while (cpt < 5);
 }
 
+//====================================== Dessin triangle/carre/rectangle ==================================================
 void trianglerectangle (int hautf) {
     for (int i = 1; i <= hautf; i++) {
         printf("\t\t\t\t\t\t\t\t\t");
@@ -202,4 +203,38 @@ int choisirCouleur() {
     printf("Entrez la couleur de la police :  \n1 ----- Pour rouge \n2 ----- vert \n3 ----- Pour bleu \n4 ----- Pour jaune \n5 ----- magenta ) : ");
     scanf("%d", &couleur);
     return couleur;
+}
+
+//========================================= Tableau ========================================================================
+void saisietab (int tab[],  int *n) {
+    int a, cpt=0;
+    printf("Remplissez le tableau\n");
+    do {
+        printf("Entrez une valeur: ");
+        scanf( "%d", &a);
+        if (a >= 0) {
+            tab[cpt] = a;
+            cpt++;
+        } else {
+            printf("Fin de saisie\n");
+        }
+    } while (a >= 0);
+    *n = cpt;
+}
+
+void transfertab(int tab[], int *n, int tab2[], int *m) {
+    *m = 0;
+    for (int i = 0; i < *n; i++) {
+        if (tab[i] % 2 == 0) {
+            tab2[*m] = tab[i];
+            (*m)++;
+        }
+    }
+}
+
+void  affichetab (int tab2[], int *m) {
+    for (int i = 0; i < *m; i++) {
+        printf("%d  ", tab2[i]);
+    }
+    printf("\n");
 }

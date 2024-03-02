@@ -17,6 +17,9 @@ void saisieglobal();
 void menuview();
 void changerCouleurPolice(int);
 int choisirCouleur();
-
+//Tableau 
+void transfertab (int tab[], int *n, int tab2[], int *m);
+void saisietab (int tab[],  int *n);
+void  affichetab (int tab2[], int *m);
 
 #endif
