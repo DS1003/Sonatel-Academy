@@ -2,7 +2,7 @@
 #include "persolib.h"
 
 int main() {
-    int taille1=10000, taille2;
+    int taille1=100, taille2;
     int tab1[taille1];
     saisietab(tab1, &taille1);
 
