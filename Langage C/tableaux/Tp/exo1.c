@@ -9,11 +9,6 @@ void trietab_desc (int tab[], int *t);
 //main
 int main() {
     int taille = 1000, tab[taille];
-    
-    
-    affichetab(tab,  taille);
-    
-    
 
     int choix;
     do {
@@ -26,6 +21,8 @@ int main() {
         scanf(" %d",&choix);
         if (choix == 1) {
             saisietab(tab,  &taille);
+            printf("---------------------- Tableau ----------------------\n");
+            affichetab(tab, taille);
         }     
         if (choix == 2){
             char c2;
