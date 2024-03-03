@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 //Prototype
-void  affichetab (int tab2[], int m);
+void affichetab (int tab2[], int m);
 void saisietab (int tab[],  int *n);
 void trietab_asc (int tab[], int *t);
 void trietab_desc (int tab[], int *t);
@@ -9,7 +9,7 @@ void transfertab10( int tab[], int *n, int tab2[], int *m);
 
 //main
 int main() {
-    int taille = 1000, tab[taille];
+    int taille=0, tab[taille];
 
     int choix;
     do {
@@ -21,36 +21,35 @@ int main() {
         printf("4 ---------- Quitter                                     \n");
         scanf(" %d",&choix);
         if (choix == 1) {
-            saisietab(tab,  &taille);
+            saisietab(tab, &taille);
             printf("---------------------- Tableau ------------------------\n");
             affichetab(tab, taille);
         }     
-        if (choix == 2){
-            char c2;
-            do {
-                printf("a ---------- Trie par ordre croissant (asc)      \n");
-                printf("b ---------- Trie par ordre croissant (desc)     \n");
-                scanf("%s", &c2);
-                if ( c2 == 'a') {
-                    printf("Trier le tableau en ordre ascendant\n");
-                    trietab_asc(tab , &taille);
-                    printf("\nApres trier : \n");
-                    affichetab(tab, taille);
-                }
-                if ( c2 == 'b') {
-                    printf("Trier le tableau en ordre ascendant\n");
-                    trietab_desc(tab, &taille);
-                    printf("\nApres trier : \n");
-                    affichetab(tab, taille);
-                }
-                if (c2 != 'a' && c2 > 'b' ) {
-                    printf("Ce menu n'existe pas...Veuillez entrer une option entre a et b");
-                }
-                
-            }while (c2!='a' && c2 != 'b');
-            
+        if (choix == 2 &&  taille != 0) {
+                char c2;
+                do {
+                    printf("a ---------- Trie par ordre croissant (asc)      \n");
+                    printf("b ---------- Trie par ordre croissant (desc)     \n");
+                    scanf("%s", &c2);
+                    if ( c2 == 'a') {
+                        printf("Trier le tableau en ordre ascendant\n");
+                        trietab_asc(tab , &taille);
+                        printf("\nApres trier : \n");
+                        affichetab(tab, taille);
+                    }
+                    if ( c2 == 'b') {
+                        printf("Trier le tableau en ordre ascendant\n");
+                        trietab_desc(tab, &taille);
+                        printf("\nApres trier : \n");
+                        affichetab(tab, taille);
+                    }
+                    if (c2 != 'a' && c2 > 'b' ) {
+                        printf("Ce menu n'existe pas...Veuillez entrer une option entre a et b");
+                    }
+                    
+                }while (c2!='a' && c2 != 'b');
         }
-        if (choix == 3){
+        if (choix == 3 &&  taille != 0) {
             int tab2[taille]; // Déclarer un tableau pour stocker les valeurs transférées
             int taille2; // Variable pour stocker la taille du tableau transféré
 
@@ -64,7 +63,10 @@ int main() {
         }  
         if (choix <= 0 || choix > 4){
             printf("Ce menu n'existe pas...Veuillez entrer une option entre 1 et 4\n");
-        }       
+        }  
+        if (taille == 0) {
+            printf("\n------- Veuillez remplire le tableau au préalable !!!\n");
+        }    
     } while (choix !=4);
     
 
@@ -85,8 +87,8 @@ void saisietab (int tab[],  int *n) {
     printf("Remplissez le tableau\n");
     do {
         printf("Entrez une valeur: ");
-        scanf( "%d", &a);
-        if (a >= 0 && a%2 == 0) {
+        scanf("%d", &a);
+        if ( a%2 == 0) {
             tab[cpt] = a;
             cpt++;
             do {
@@ -97,13 +99,12 @@ void saisietab (int tab[],  int *n) {
                 }
             }while (rep !='O' && rep != 'o' && rep  !='n' && rep != 'N');
         }
-        if (a%2 != 0 || a<0) {
-            printf("veuillez  entrez un nombre pair et positif\n");
+        if (a%2 != 0) {
+            printf("veuillez  entrez un nombre pair !\n");
         }
     } while (rep == 'o' || rep == 'O');
     *n = cpt;
 }
-
 
 void trietab_asc(int tab[], int *t) {
     int i,j,c;
