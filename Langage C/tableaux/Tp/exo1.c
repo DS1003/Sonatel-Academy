@@ -5,6 +5,7 @@ void  affichetab (int tab2[], int m);
 void saisietab (int tab[],  int *n);
 void trietab_asc (int tab[], int *t);
 void trietab_desc (int tab[], int *t);
+void transfertab10( int tab[], int *n, int tab2[], int *m);
 
 //main
 int main() {
@@ -21,7 +22,7 @@ int main() {
         scanf(" %d",&choix);
         if (choix == 1) {
             saisietab(tab,  &taille);
-            printf("---------------------- Tableau ----------------------\n");
+            printf("---------------------- Tableau ------------------------\n");
             affichetab(tab, taille);
         }     
         if (choix == 2){
@@ -50,10 +51,16 @@ int main() {
             
         }
         if (choix == 3){
-            
+            int tab2[taille]; // Déclarer un tableau pour stocker les valeurs transférées
+            int taille2; // Variable pour stocker la taille du tableau transféré
+
+            transfertab10(tab, &taille, tab2, &taille2); // Appel de la fonction transfertab10
+
+            printf("------------------ Valeurs du tableau > 10 -----------------\n");
+            affichetab(tab2, taille2); 
         }    
         if (choix == 4){
-            
+            printf("Merci & Aurevoir !!!\n");
         }  
         if (choix <= 0 || choix > 4){
             printf("Ce menu n'existe pas...Veuillez entrer une option entre 1 et 4\n");
