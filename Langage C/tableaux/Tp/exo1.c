@@ -28,7 +28,18 @@ int main() {
         if (choix == 1) {
 
         }     
-        if (choix )       
+        if (choix == 2){
+
+        }
+        if (choix == 3){
+            
+        }    
+        if (choix == 4){
+            
+        }  
+        if (choix <= 0 || choix > 4){
+            printf("Ce menu n'existe pas...Veuillez entrer une option entre 1 et 4\n");
+        }       
     } while (choix !=4);
     
 
