@@ -41,7 +41,7 @@ void saisietab (int tab[],  int *n) {
         printf("Entrez une valeur: ");
         scanf( "%d", &a);
         if (a != 0) {
-            if (cpt )
+            
             cpt++;
 
         }

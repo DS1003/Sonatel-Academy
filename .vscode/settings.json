@@ -58,6 +58,7 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "*.embeddedhtml": "html",
-    "persolib_c": "c"
+    "persolib_c": "c",
+    "stdio.h": "c"
   }
 }

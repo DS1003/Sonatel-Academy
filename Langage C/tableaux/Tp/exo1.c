@@ -78,19 +78,18 @@ void  affichetab (int tab2[], int m) {
     for (int i = 0; i < m; i++) {
         printf("%d  ", tab2[i]);
     }
-    printf("\n");
 }
 
 void saisietab (int tab[],  int *n) {
     int a, cpt=0;
-    char rep = 'o';
+    char rep = 'O';
     printf("Remplissez le tableau\n");
     do {
         printf("Entrez une valeur: ");
         scanf("%d", &a);
         if ( a%2 == 0) {
             tab[cpt] = a;
-            cpt++;
+            cpt++;// cpt = 0 + 1; cpt = 1
             do {
                 printf("Voulez vous ressaisir un nombre ? O/N : ");
                 scanf("%s",&rep);
@@ -103,6 +102,7 @@ void saisietab (int tab[],  int *n) {
             printf("veuillez  entrez un nombre pair !\n");
         }
     } while (rep == 'o' || rep == 'O');
+
     *n = cpt;
 }
 
