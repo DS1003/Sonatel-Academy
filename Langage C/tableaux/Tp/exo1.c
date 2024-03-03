@@ -9,12 +9,11 @@ void trietab_desc (int tab[], int *t);
 //main
 int main() {
     int taille = 1000, tab[taille];
-    saisietab(tab,  &taille);
-    printf("Trier le tableau en ordre ascendant\n");
+    
+    
     affichetab(tab,  taille);
-    trietab_desc(tab, &taille);
-    printf("\nApres trier : \n");
-    affichetab(tab, taille);
+    
+    
 
     int choix;
     do {
@@ -26,10 +25,32 @@ int main() {
         printf("4 ---------- Quitter                                     \n");
         scanf(" %d",&choix);
         if (choix == 1) {
-
+            saisietab(tab,  &taille);
         }     
         if (choix == 2){
-
+            char c2;
+            do {
+                printf("a ---------- Trie par ordre croissant (asc)      \n");
+                printf("b ---------- Trie par ordre croissant (desc)     \n");
+                scanf("%s", &c2);
+                if ( c2 == 'a') {
+                    printf("Trier le tableau en ordre ascendant\n");
+                    trietab_asc(tab , &taille);
+                    printf("\nApres trier : \n");
+                    affichetab(tab, taille);
+                }
+                if ( c2 == 'b') {
+                    printf("Trier le tableau en ordre ascendant\n");
+                    trietab_desc(tab, &taille);
+                    printf("\nApres trier : \n");
+                    affichetab(tab, taille);
+                }
+                if (c2 != 'a' && c2 > 'b' ) {
+                    printf("Ce menu n'existe pas...Veuillez entrer une option entre a et b");
+                }
+                
+            }while (c2!='a' && c2 != 'b');
+            
         }
         if (choix == 3){
             
