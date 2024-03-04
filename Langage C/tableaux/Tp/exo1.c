@@ -74,6 +74,11 @@ int main() {
 }
 
 //Implémantation
+
+
+
+
+
 void  affichetab (int tab2[], int m) {
     for (int i = 0; i < m; i++) {
         printf("%d  ", tab2[i]);
@@ -101,7 +106,7 @@ void saisietab (int tab[],  int *n) {
         if (a%2 != 0) {
             printf("veuillez  entrez un nombre pair !\n");
         }
-    } while (rep == 'o' || rep == 'O');
+    } while (rep == 'o' || rep == 'O' );
 
     *n = cpt;
 }

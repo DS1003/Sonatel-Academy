@@ -140,9 +140,11 @@ void menuview () {
         if(rep == 'o' || rep == 'O'){
             y = saisie12();
             if (x>y) {
+                changerCouleurPolice(choisirCouleur());
                 trianglerectangle(x);
             }
             if (x==y) {
+                changerCouleurPolice(choisirCouleur());
                 carre(x);
             }
             
@@ -164,6 +166,7 @@ void menuview () {
                     changerCouleurPolice(choisirCouleur());
                     triangleisocele(x);
                 } else {
+                    changerCouleurPolice(choisirCouleur());
                     trianglerectangle(x);
                 }
             }

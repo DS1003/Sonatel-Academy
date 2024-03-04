@@ -11,22 +11,6 @@ int main () {
     affichetab(tab1, taille1);
 
 
-    // Algo de trie
-    int a, cpt=0, tab[cpt];
-     printf("Entrez une valeur: ");
-        scanf( "%d", &a);
-        if (a != 0) {
-            for  (int i = 0 ; i<cpt ;i--) {
-                if (a > tab[i]) {
-                   int temp = tab[i] ;
-                   tab[i]= tab[i+1] ;
-                   tab[i + 1] =temp;
-                }
-            }
-            tab[cpt] = a;
-            cpt++;
-        }
-
     return 0;
 }
 
@@ -55,3 +39,26 @@ void  affichetab (int tab2[], int m) {
     }
     printf("\n");
 }
+
+void saisietri(int t[],int *n){
+          int a,i=0,cpt=1,t;
+          do{
+            printf("Entrez une valeur: ");
+             scanf("%d",&a);
+           if (a!=0){
+            t[i]=a;
+            if(cpt==0){
+              for(int k=0;k<*n;k++){
+                for(int j=k+1;j<*n;j++){
+                  if(t[k]>t[j]){
+                    t=t[k];
+                    t[k]=t[j];
+                    t[j]=t;
+                  }
+                }
+              }
+            }  cpt=0; i++; *n=i+1;
+           }
+          }while(a!=0);
+          *n=i;
+   }
