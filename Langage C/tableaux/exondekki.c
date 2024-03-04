@@ -38,7 +38,6 @@ void saisir(int taille, int t[])
         }
 
     } while (reponse == 'o' &&  i < taille);
-    //*n = i;
 }
 
 void affiche(int t[], int n)
