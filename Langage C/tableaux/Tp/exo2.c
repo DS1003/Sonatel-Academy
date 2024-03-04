@@ -16,13 +16,11 @@ int main () {
      printf("Entrez une valeur: ");
         scanf( "%d", &a);
         if (a != 0) {
-            for  (int i = cpt ; i>=0 ;i--) {
-                if (a  <= tab1[i]) {
-                    tab[cpt] = tab1[i];
-                    cpt++;
-                    tab[cpt] = a;
-                } else {
-                   tab[cpt] = a;
+            for  (int i = 0 ; i<cpt ;i--) {
+                if (a > tab[i]) {
+                   int temp = tab[i] ;
+                   tab[i]= tab[i+1] ;
+                   tab[i + 1] =temp;
                 }
             }
             tab[cpt] = a;
@@ -39,11 +37,10 @@ void saisietab (int tab[],  int *n) {
     printf("Remplissez le tableau\n");
     do {
         printf("Entrez une valeur: ");
-        scanf( "%d", &a);
+        scanf("%d", &a);
         if (a != 0) {
-            
+            tab[cpt] = a;
             cpt++;
-
         }
         if (a == 0 && cpt == 0) {
             printf("Veuillez remplir le tableau  d'au moins une case.\n");
