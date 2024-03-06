@@ -5,7 +5,11 @@ void isdatevalide1 (int, int, int);
 int saisiedate (void);
 
 int main (){
-
+    int j, mois, annee;
+    j =  saisirjour();
+    mois = saisirmois();
+    annee = saisiran();
+    isdatevalide1(j,mois,annee);
     return 0;
 }
 
@@ -29,14 +33,14 @@ int saisirjour (void) {
 
 int saisirmois (void) {
     int mois;    
-    printf("Saisir un jour : ");
+    printf("Saisir un mois : ");
     scanf("%d", &mois);
     return  mois;
 }
 
 int saisiran (void) {
     int an;    
-    printf("Saisir un jour : ");
+    printf("Saisir une année : ");
     scanf("%d", &an);
     return  an;
 }
