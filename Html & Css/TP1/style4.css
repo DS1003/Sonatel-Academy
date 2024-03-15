@@ -68,13 +68,12 @@ h3 {
 .bas {
     position: absolute;
     height: 50px;
-    width: 59.9%;
+    width: 664px;
     bottom: 0;
     transform: translateX(33%);
     background-color: rgb(243, 165, 32);
     border-left: solid;
     border-right: solid;
-    bord
 }
 
 .box1 {

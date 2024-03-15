@@ -14,7 +14,7 @@
 
 .figure{
    width: 55%;
-   height: 500px;
+   height: 550px;
    background-color: rgb(171, 162, 162);
    text-align: center;
    border-top-left-radius: 60%; 
@@ -41,7 +41,7 @@
     position: relative;
     top: 0px;
     left: 400px;
-    margin-top: -700px;
+    margin-top: -750px;
 }
 
 .cercle2{
@@ -52,5 +52,5 @@
     position: relative;
     top: 0px;
     left: -95px;
-    margin-top: 300px;
+    margin-top: 350px;
 }

@@ -16,13 +16,15 @@
 
 .menu {
     background-color: rgb(16, 1, 156);
-    height: 35px;
+    padding: 10px;
     max-width: 2200px;
+    text-justify: auto;
+    align-items: center;
 }
 
 .global {
     background-color: rgb(197, 3, 3);
-    padding: 350px;
+    height: 640px;
     max-width: 2200px;
     margin-top: 20px;
     margin-bottom: 20px;

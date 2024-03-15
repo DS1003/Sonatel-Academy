@@ -39,11 +39,10 @@
     color: aliceblue;
     align-items: center;
     font-weight: 1000;
-
-
 }
 .imgtext{
     margin-top: 15px;
+    background-image: url(../TP1/image/logo_RDC_badge_blanc.png);
 }
 .sider{
     width: 10%;
@@ -68,9 +67,9 @@
     width: 30%;
     height: 100%;
     border: 3px solid white;
-    background-color: rgb(158, 158, 158);
-    background-image: url(/Examen\ Html\ &\ Css/image/logo.png);
+    
     position: relative;
+    background-image: url(../TP1/image/icon-safety.png.imgw.1280.1280.png);
     margin:0px;
     padding-bottom: 15px;
 }

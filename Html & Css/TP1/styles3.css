@@ -55,9 +55,10 @@
 #box3 {
     background-color: purple;
 }
+
 .img{
-    width: 15%;
-    height: 25%;
+    width: 100px;
+    height: 100px;
     border: 2px solid white;
     margin: 15px;
     float: left;
@@ -67,10 +68,6 @@
     font-size: small;
     color: aliceblue;
     align-items: center;
-    font-weight: 1000;
-
-
-}
-.imgtext{
-    margin-top: 15px;
+    font-weight: 1000px;
+    background-color: azure;
 }
