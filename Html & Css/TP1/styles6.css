@@ -1,0 +1,14 @@
+#container {
+    margin: 0 auto;
+    background-color: darkgray;
+    height: 500px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    width: 700px;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}

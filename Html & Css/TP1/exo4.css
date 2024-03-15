@@ -1,0 +1,122 @@
+.content {
+    margin-top: 10%;
+    margin-left: 20%;
+    height: 100%;
+    width: 60%;
+    position: relative;
+    background-color: black;
+}
+
+h4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, 50%);
+}
+
+h3 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header {
+    position: relative;
+    background-color: red;
+    border-top: solid;
+    border-left: solid;
+    border-right: solid;
+    height: 50px;
+}
+
+.content_milieu {
+    position: relative;
+    border: solid;
+    height: 370px;
+}
+
+.milieu {
+    height: 317px;
+    width: 61%;
+    border-left: solid;
+    border-right: solid;
+    border-bottom: solid;
+    position: absolute;
+    left: 20%;
+}
+
+.boxG {
+    background-color: rgb(215, 39, 159);
+    height: 100%;
+    width: 20%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.boxD {
+    background-color: rgb(18, 228, 18);
+    height: 100%;
+    width: 19%;
+    border-left: solid;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.bas {
+    position: absolute;
+    height: 50px;
+    width: 59.9%;
+    bottom: 0;
+    transform: translateX(33%);
+    background-color: rgb(243, 165, 32);
+    border-left: solid;
+    border-right: solid;
+    bord
+}
+
+.box1 {
+    background-color: blue;
+    height: 317px;
+    width: 18%;
+    position: absolute;
+    left: 0;
+}
+
+.box2 {
+    background-color: grey;
+    height: 317px;
+    width: 20%;
+    position: absolute;
+    left: 18%;
+    border-left: solid;
+}
+
+.box3 {
+    background-color: white;
+    height: 317px;
+    width: 23%;
+    position: absolute;
+    left: 36%;
+    border-left: solid;
+}
+
+.box4 {
+    background-color: black;
+    color: white;
+    height: 317px;
+    width: 23%;
+    position: absolute;
+    right: 19%;
+    border-left: solid;
+}
+
+.box5 {
+    background-color: rgb(134, 55, 55);
+    height: 317px;
+    width: 19%;
+    position: absolute;
+    right: 0;
+}

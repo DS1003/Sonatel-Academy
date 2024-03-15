@@ -156,7 +156,6 @@ int remplireTabEtudiant (ETUDIANT etudiants[100]) {
 void genererMatricule  (char matricule[10], ETUDIANT  etudiant) {
     //matricule ex: MAT-PM0001 (MAT-1èrelettre prénom+1èrelettre nom + id)
     sprintf(matricule,"MAT-%c%c%04d", toupper(etudiant.prenom[0]), toupper(etudiant.nom[0]), etudiant.id);
-
 }
 
 
