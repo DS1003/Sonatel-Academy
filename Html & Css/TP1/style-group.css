@@ -1,0 +1,30 @@
+.container {
+    height: 350vh;
+    background-color: cadetblue;
+}
+
+.box1 {
+    height: 100px;
+    width: 100px;
+    background-color: rgb(253, 253, 253);
+    position: sticky;
+    top: 550px;
+    margin: 5px;
+    text-align: center;
+}
+
+.box2 {
+    height: 120px;
+    width: 120px;
+    right: 2px;
+    background-color: rgb(117, 0, 172);
+    position: fixed;
+    margin: 10px;
+    text-align: center;
+}
+
+.teststicky {
+    margin-top: 7px;
+    height: 100vh;
+    background-color: cadetblue;
+}
