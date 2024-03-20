@@ -1,0 +1,32 @@
+.tab1 {
+    display: flex;
+    width: auto;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    width: 100%;
+    height: 100%;
+}
+
+.header, .footer {
+    background-color: rgb(236, 174, 3);
+    padding: 35px;
+    max-width: 2200px;
+}
+
+.menu {
+    background-color: rgb(16, 1, 156);
+    padding: 10px;
+    max-width: 2200px;
+    text-justify: auto;
+    align-items: center;
+}
+
+.global {
+    background-color: rgb(197, 3, 3);
+    height: 640px;
+    max-width: 2200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}

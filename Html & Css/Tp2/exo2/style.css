@@ -1,0 +1,40 @@
+.container {
+    position: relative;
+    border: 2px solid black;
+}
+.header , .footer{
+    height: 7vh;
+    background-color: rgb(255, 196, 0);
+}
+
+.navbar {
+    height: 3vh;
+    background-color: blue;
+
+}
+
+.container2 {    /*---------------mILIEU*/
+    margin: 15px;
+    height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    flex-direction: row-reverse;
+    overflow: hidden;
+}
+
+.box1 {
+    height: 50%;
+    width: 50%;
+    background-color: green;
+}
+.b2 {
+    height: 50%;
+    width: 50%;
+    background-color: rgb(192, 172, 172);
+}
+.b3 {
+    height: 50%;
+    width: 50%;
+    background-color: rgb(5, 131, 139);
+}

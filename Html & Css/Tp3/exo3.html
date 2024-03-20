@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo 3</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        div {
+            display: flex;
+            justify-content: space-around;
+        }
+        .imgbox {
+            position: relative; /* Ajout de cette ligne pour que la position absolue de .thover soit relative à .imgbox */
+            height: 30vh;
+            width: 25vw;
+            margin-top: 3vh;
+        }
+        .thover {
+            position: absolute;
+            top: -16px;
+            background-color: rgb(140, 0, 255);
+            width: 115.4%;
+            height: 30px;
+            text-align: center;
+            font-weight: bold;
+            font-size: medium;
+            color: white;
+            visibility: hidden;
+        }
+
+        .imgbox:hover .thover {
+            visibility: visible;
+        }
+
+        .imgbox:hover {
+            image-resolution: high;
+            transform: scale(1.02);
+            transition: 0.7s;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="imgbox">
+            <p class="thover">test hover !!!</p>
+            <img src="./demon-slayer-kimetsu-no-yaiba.{format}" alt="">
+        </div>
+        <div class="imgbox">
+            <p class="thover">test hover !!!</p>
+            <img src="./demon-slayer-kimetsu-no-yaiba.{format}" alt="">
+        </div>
+        <div class="imgbox">
+            <p class="thover">test hover !!!</p>
+            <img src="./demon-slayer-kimetsu-no-yaiba.{format}" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

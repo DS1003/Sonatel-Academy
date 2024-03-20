@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stade de foot</title>
+    <style>
+        .container {
+            position: absolute;
+            margin: auto;
+            margin-top: 2vh;
+            margin-left: 1.3vw;
+            height: 95vh;
+            width: 90%;
+            background-color: black;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .pelouse {
+            background-color: rgb(0, 151, 0);
+            height: 53vh;
+            width: 60vw;
+            z-index: 2;
+            position: absolute;
+            top: 20%;
+            right: 15%;
+            left: 13%;
+            bottom: 15%;
+            border: 20px solid rgb(0, 88, 0);
+            border-radius: 9px;
+            
+        }
+        span {
+            color: white;
+            font-weight: bold;
+            font-family: 'Segoe UI',sans-serif;
+            font-size: small;
+            position: absolute;
+            right: 30px;
+            top: -18px;
+        }
+        .contour {
+            border: 2px solid  white;
+            height: 99%;
+            width: 99.8%;
+            margin: auto;
+            position: absolute;
+            display: flex;
+        }
+        .part-pelouse {
+            background-color: rgb(0, 151, 0);
+            height: 100%;
+            width: 5.9%;
+        }
+        .part-pelouse2 {
+            background-color: green;
+            height: 100%;
+            width: 5.9%;
+        }
+        .cornertopleft {
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            border: 2px solid white;
+            border-bottom-right-radius: 100%;
+            top: -2px;
+            left: -2px;
+        }
+        .cornertopright {
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            border: 2px solid white;
+            border-bottom-left-radius: 100%;
+            top: -2px;
+            right: -2px;
+        }
+        .cornerbottomleft {
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            border: 2px solid white;
+            border-top-right-radius: 100%;
+            bottom: -2px;
+            left: -2px;
+        }
+        .cornerbottomright {
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            border: 2px solid white;
+            border-top-left-radius: 100%;
+            bottom: -2px;
+            right: -2px;
+        }
+        .milieu {
+            border: 1px solid white;
+            height: 99.5%;
+            width: 0;
+            position: absolute;
+            left: 50%;
+        }
+        .rond-centrale {
+            border: 2px solid white;
+            height: 150px;
+            width:  150px;
+            position: absolute;
+            border-radius: 50%;
+            top: 35%;
+            left: 43%;
+        }
+        .camp-left {
+            border: 2px solid white;
+            height: 15%;
+            width: 3%;
+            position: absolute;
+            align-self: center;
+            left: -2px;
+        }
+        .camp-right {
+            border: 2px solid white;
+            height: 15%;
+            width: 3%;
+            position: absolute;
+            align-self: center;
+            right: -2px;
+        }
+        .surface-left {
+            border: 2px solid white;
+            height: 50%;
+            width: 10%;
+            position: absolute;
+            align-self: center;
+            left: -2px;
+        }
+        .surface-right {
+            border: 2px solid white;
+            height: 50%;
+            width: 10%;
+            position: absolute;
+            align-self: center;
+            right: -2px;
+        }
+        .arc-left {
+            border: 2px  solid #ffffff;
+            height: 50px;
+            width: 20px;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            border-top: 50%;
+            position: absolute;
+            align-self: center;
+            left: 6vw;
+        }
+        .arc-right {
+            border: 2px  solid #ffffff;
+            height: 50px;
+            width: 20px;
+            border-top-left-radius: 50%;
+            border-bottom-left-radius: 50%;
+            position: absolute;
+            align-self: center;
+            right: 6vw;
+        }
+        .ball {
+            position: absolute;
+            height: 12px;
+            width: 12px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            bottom: -16px;
+            left: 48%;
+        }
+        .point1 {
+            position: absolute;
+            height: 7px;
+            width: 7px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            align-self: center;
+            left: 6%;
+        }
+        .point2 {
+            position: absolute;
+            height: 7px;
+            width: 7px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            align-self: center;
+            right: 6%;
+        }
+        /* .tribune-left {
+            border: 1px solid white;
+            margin: 1px;
+            border-radius: 15px;
+            height: 100%;
+            width: 16%;
+        } */
+        .seat1 {
+            background-color: rgb(21, 172, 1);
+            height: 27px;
+            width: 37px;
+            text-align: center;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 10%;
+            border-bottom-right-radius: 10%;
+            top: 20px;
+            left: 5px;
+            transform: rotate(-90deg);
+            margin: 7px;
+
+        }
+        .greenseat {
+            display: flex;
+            width: auto;
+            flex-direction: column;
+            position: absolute;
+            top: 2%;
+        }
+        .greenseat2 {
+            display: flex;
+            width: auto;
+            flex-direction: column;
+            position: absolute;
+            top: 5.5%;
+            left: 2%;
+        }
+        .yellowseat {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 8%;
+            left: 4%;
+        }
+        .yellowseat2 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 10.3%;
+            left: 6%;
+        }
+        .redseat {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 12.7%;
+            left: 7.7%;
+        }
+        .redseat2 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 14.7%;
+            left: 9.5%;
+        }
+        .seat2 {
+            background-color: rgb(21, 172, 1);
+            height: 24px;
+            width: 34px;
+            text-align: center;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 10%;
+            border-bottom-right-radius: 10%;
+            top: 20px;
+            left: 5px;
+            transform: rotate(-90deg);
+            margin: 7px;
+        }
+        .seat3 {
+            background-color: rgb(255, 238, 0);
+            height: 21.8px;
+            width: 33px;
+            text-align: center;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 10%;
+            border-bottom-right-radius: 10%;
+            top: 20px;
+            left: 5px;
+            transform: rotate(-90deg);
+            margin: 7px;
+        }
+        .seat4 {
+            background-color: rgb(255, 238, 0);
+            height: 19.7px;
+            width: 30px;
+            text-align: center;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 10%;
+            border-bottom-right-radius: 10%;
+            top: 20px;
+            left: 5px;
+            transform: rotate(-90deg);
+            margin: 7px;
+        }
+        .seat5 {
+            background-color: rgb(255, 0, 0);
+            height: 17.8px;
+            width: 29px;
+            text-align: center;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 10%;
+            border-bottom-right-radius: 10%;
+            top: 20px;
+            left: 5px;
+            transform: rotate(-90deg);
+            margin: 7px;
+        }
+        .seat6 {
+            background-color: rgb(255, 0, 0);
+            height: 16px;
+            width: 27px;
+            text-align: center;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 10%;
+            border-bottom-right-radius: 10%;
+            top: 20px;
+            left: 5px;
+            transform: rotate(-90deg);
+            margin: 7px;
+        }
+        .tribune-right {
+            width: 100%;
+            
+        }
+        .test {
+            position: absolute;
+            border: 2px solid red;
+            right: 0%;
+            width: 17%;
+            height: 99%;
+            display: flex;
+            justify-content:  space-between;
+            align-items: flex-start;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+            <!-- --------tribune------- -->
+        <div class="tribune-left">
+            <div class="greenseat">
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+            </div>
+            <div class="greenseat2">
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+            </div>
+            <div class="yellowseat">
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+            </div>
+            <div class="yellowseat2">
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+            </div>
+            <div class="redseat">
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+            </div>
+            <div class="redseat2">
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+            </div>
+        </div>
+
+       
+        <div class="pelouse">
+            <span>Nombre de places restantes: 684 !</span>
+            <div class="contour">
+                <!-- ------------coin corner  -->
+                <div class="cornertopleft"></div>
+                <div class="cornertopright"></div>
+                <div class="cornerbottomleft"></div>
+                <div class="cornerbottomright"></div>
+                <!-- -------------------camp  -->
+                <div class="camp-left"></div>
+                <div class="camp-right"></div>
+                <div class="point1"></div>
+                <div class="point2"></div>
+                <!-- ---------------surface de réparation  -->
+                <div class="surface-left"></div>
+                <div class="surface-right"></div>
+                <div class="arc-left"></div>
+                <div class="arc-right"></div>
+
+                <div class="part-pelouse"></div>
+                <div class="part-pelouse2"></div>
+                <div class="part-pelouse"></div>
+                <div class="part-pelouse2"></div>
+                <div class="part-pelouse"></div>
+                <div class="part-pelouse2"></div>
+                <div class="part-pelouse"></div>
+                <div class="part-pelouse2"></div>
+                <div class="part-pelouse">
+                    <div class="milieu"></div>
+                    <div class="rond-centrale"></div>
+                </div>
+                <div class="part-pelouse2"></div>
+                <div class="part-pelouse"></div>
+                <div class="part-pelouse2"></div>
+                <div class="part-pelouse"></div>
+                <div class="part-pelouse2"></div>
+                <div class="part-pelouse"></div>
+                <div class="part-pelouse2"></div>
+            </div>
+
+            <div class="ball" style="left: 50%;"></div>
+            <div class="ball"></div>
+            <div class="ball" style="left: 52%;"></div>
+
+        </div>
+
+        <div class="test">
+            <div class="greenseat1">
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+            </div>
+            <div class="greenseat21">
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+            </div>
+            <div class="yellowseat1">
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+            </div>
+            <div class="yellowseat21">
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+            </div>
+            <div class="redseat1">
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+            </div>
+            <div class="redseat21">
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+            </div>
+        </div>
+
+       <!--  <div class="tribune-right">
+            <div class="greenseat">
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+                <div class="seat1"><h6>1</h6></div>
+            </div>
+            <div class="greenseat2">
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+                <div class="seat2"></div>
+            </div>
+            <div class="yellowseat">
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+                <div class="seat3"><h6>1</h6></div>
+            </div>
+            <div class="yellowseat2">
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+                <div class="seat4"></div>
+            </div>
+            <div class="redseat">
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+                <div class="seat5"><h6>1</h6></div>
+            </div>
+            <div class="redseat2">
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+                <div class="seat6"></div>
+            </div>
+        </div> -->
+    </div>
+
+    
+</body>
+
+</html>
