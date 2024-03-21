@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keybord</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 80vh;
+            display: block;
+            margin: 50px;
+        
+        }
+        .container{
+        background-color: rgb(179, 177, 177);
+        width: 90vw;
+        height: 22.5vw;
+        position: relative;
+        top: 25vh;
+        left: 5vw;
+        border: 5px solid white;
+        }
+
+        .content{
+            margin: 0.5%;
+            justify-content: space-between;
+        }
+
+        .row{
+            width: 100%;
+            height: 60px ;
+            margin: 1px;
+        }
+
+        .row0{
+        width: 100%;
+        height: 53px ;
+        margin: 1px;
+        }
+
+        .col1{
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            button{
+                height:  80%;
+            }
+            margin-bottom: 0;
+        }
+
+        button{
+            color: white;
+            background-color: black;
+            width: 7%;
+            height: 55px;
+            border-radius: 10px;
+            border: none;
+            font-size: 20px;
+            margin: 0.07%;
+            box-shadow: 2.5px 3px 3px 5px white;
+            cursor: pointer;
+        }
+
+
+        button:active{
+            box-shadow: none;
+        }
+        .espace1{
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        .col2{
+            margin: 6px 0 0 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            button{
+                height:  100%;
+            }
+        }
+
+
+        .delete{
+            width: 15%;
+            background-color: rgb(136, 0, 0);
+        }
+        .tab{
+            width: 10%;
+            background-color: rgb(136, 0, 0);
+        }
+
+        .caps{
+            width: 12%;
+            background-color: rgb(136, 0, 0);
+        }
+
+        .return{
+            width: 10%;
+            background-color: rgb(136, 0, 0);
+        }
+
+        .shift{
+            width: 14%;
+            background-color: rgb(136, 0, 0);
+        }
+
+        .command{
+            width: 10%;
+            background-color: rgb(136, 0, 0);
+        }
+
+        .espace{
+            width: 70%;
+        }
+
+        .espace2{
+            width: 24%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        button{
+            width: 50%;
+            height: 100%;
+        }
+        }
+
+        .up{
+            width: 20%;
+        }
+        .int{
+            margin-top: 5px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="row0 col2">
+                <button>Esc</button>
+                <button class="espace1"> </button>
+                <button>Lang</button>
+                <button>(!)</button>
+            </div>
+            <div class="col2 row">
+                <button>~</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>0</button>
+                <button>-</button>
+                <button>=</button>
+                <button class="delete">Delete</button>
+            </div>
+            <div class="col2 row">
+                <button class="tab">Tab</button>
+                <button>Q</button>
+                <button>W</button>
+                <button>E</button>
+                <button>R</button>
+                <button>T</button>
+                <button>Y</button>
+                <button>U</button>
+                <button>I</button>
+                <button>O</button>
+                <button>P</button>
+                <button>[</button>
+                <button>]</button>
+                <button >\</button>
+            </div>
+            <div class="col2 row">
+                <button class="caps">Caps Lock</button>
+                <button>A</button>
+                <button>S</button>
+                <button>D</button>
+                <button>F</button>
+                <button>G</button>
+                <button>H</button>
+                <button>J</button>
+                <button>K</button>
+                <button>L</button>
+                <button>:</button>
+                <button>'</button>
+                <button class="return">Return</button>
+            </div>
+            <div class="col2 row">
+                <button class="shift">Shift</button>
+                <button>Z</button>
+                <button>X</button>
+                <button>C</button>
+                <button>V</button>
+                <button>B</button>
+                <button>N</button>
+                <button>M</button>
+                <button>,</button>
+                <button>.</button>
+                <button>/</button>
+                <button class="shift">Shift</button>     
+        </div>
+        <div class="col2 row">
+            <button>Fn</button>
+            <button>Control</button>
+            <button class="command">Command</button>
+            <button class="espace"></button>
+            <button class="command">Command</button>
+            <button>Option</button>
+            <div class="espace2">
+                <button style="width: 33%;height: 100%;">Up</button>
+                <div class="int">
+                    
+                    <button style="width: 45% ; height: 100%; margin-left: 2%;"><</button>
+                    <button>Down</button>
+                    <button style="width: 45% ;">></button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+  
+</body>
+</html>

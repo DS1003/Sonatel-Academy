@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+      *{
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+      }
+
+      body{
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #6b6b6b;
+          padding: 5rem;
+          color: white;
+      }
+
+      .pl{
+          margin: 0 !important;
+      }
+
+      .container{
+          height: 90vh;
+          width: 100%;
+          display: flex;
+          background: #484647;
+          border-radius: 5px;
+      }
+
+      .sidebar{
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          padding: 7vh 16px;
+      }
+
+      .search{
+          height: 4vh;
+          background: #727071;
+          border-radius: 4px;
+          margin-bottom: 1rem;
+      }
+      .side-main{
+          display: flex;
+          flex-wrap: wrap;
+          gap: 2%;
+          margin-bottom: 15%;
+      }
+
+      .box{
+          position: relative;
+          width: 49%;
+          height: 60%;
+          border-radius: 6px;
+          background-color: #a4a4a4;
+          margin-bottom: 2%;
+          display: flex;
+          flex-wrap: wrap;
+          font-size: 1vw;
+          padding: 2%;
+          color: white;
+          h2{
+              position: absolute;
+              right: 5%;
+          }
+      }
+
+
+
+
+      .img{
+          width: 25px;
+          height: 25px;
+          padding: 4px;
+          border-radius: 50%;
+          background-color: transparent;
+          margin-right: 70%;
+      }
+
+      img{
+          width: 16px;
+          height: 16px;
+      }
+
+      .box p{
+          margin-left: 20%;
+      }
+
+      select{
+          width: 100%;
+          height: 4vh;
+          background: white;
+          border: none;
+          border-radius: 5px;
+          padding-left: 5px;
+          font-size: 1.5vw;
+          margin-top: 3vh;
+      }
+
+      .main{
+          background: #272526;
+          flex: 3;
+          display: flex;
+          flex-direction: column;
+          font-family:  "Roboto Serif", serif;
+      }
+
+      .header-main{
+          padding: 7% 2%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+      } 
+
+      .header p{
+          margin-left: 1rem;
+          margin-bottom: .5rem;
+          color: #ACAAAB;
+      }
+
+      .plus{
+          color: #4A8D48;
+      }
+
+      .heures{
+          background-color: #484647;
+          border-radius: 5px;
+          display: flex;
+          text-align: center;
+          justify-content: end;
+          span{
+              margin-right: 5.5%;
+              font-size: .9vw;
+          }
+      }
+
+      .planning{
+          display: flex;
+          gap: 2px;
+          height: 100%;
+      }
+
+      .dates{
+          flex: 1;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          padding-left: 2px;
+      }
+
+      .day{
+          flex: 1;
+          border: 1px solid #484647;
+          border-radius: 10px 0 0 10px;
+      }
+
+      .day div{
+          text-align: left;
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          padding: 0 8px;
+          align-items: center;
+      }
+
+      .cours{
+          flex: 6;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          padding-right: 2px;
+      }
+
+      .cours div{
+          flex: 1;
+          background: #687274;
+          border-radius: 0 10px 10px 0;
+      }
+
+        .toggle{
+          position: absolute;
+          top: -42vh;
+          left: 43vw;
+        }
+
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        top: 50vh;
+        left: 47vw;
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        }
+
+        /* The slider */
+        .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+        }
+
+        .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+        }
+
+        input:checked + .slider {
+        background-color: #a200ff;
+        }
+
+        input:focus + .slider {
+        box-shadow: 0 0 1px #a200ff;
+        }
+
+        input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+        border-radius: 34px;
+        }
+
+        .slider.round:before {
+        border-radius: 50%;
+        }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="search"></div>
+        <div class="side-main">
+          <div class="box">
+            <div class="img" style="background-color: #57AED5;">
+              <img src="./3.png" alt="" />
+            </div>
+            <h2>6</h2>
+            <p class="pl">Enseign.</p>
+            <p>+</p>
+          </div>
+          <div class="box">
+            <div class="img" style="background-color: #14AA1B;"> 
+              <img src="./2.png" alt="" />
+            </div>
+            <h2>6</h2>
+            <p class="pl">Salles</p>
+            <p class="">+</p>
+          </div>
+          <div class="box">
+            <div class="img" style="background-color: #FD8A01;">
+              <img src="./4.png" alt="" />
+            </div>
+            <h2>6</h2>
+            <p class="pl">Classes</p>
+            <p>+</p>
+          </div>
+          <div class="box" style="background: #ec2b30">
+            <div class="img">
+              <img src="./1.png" alt="" />
+            </div>
+            <h2>6</h2>
+            <p class="pl">Modules</p>
+            <p class="">+</p>
+          </div>
+        </div>
+        <div class="select">
+          <select name="matiere" id="mat">
+            <option value="Algo">Algo</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="header">
+            <div class="header-main">
+                <h1>Planning:ALGO</h1>
+                <div class="toggle">
+                  <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+            </div>
+          <p>0 cours</p>
+        </div>
+        <div class="heures">
+            <span>8H</span>
+            <span>9H</span>
+            <span>10H</span>
+            <span>11H</span>
+            <span>12H</span>
+            <span>13H</span>
+            <span>14H</span>
+            <span>15H</span>
+            <span>16H</span>
+            <span>17H</span>
+        </div>
+        <div class="planning">
+          <div class="dates">
+            <div class="day">
+                <div>
+                    <p>LUNDI</p>
+                    <p class="plus">+</p>
+                </div>
+            </div>
+            <div class="day">
+                <div>
+                    <p>MARDI</p>
+                    <p class="plus">+</p>
+                </div>
+            </div>
+            <div class="day">
+                <div>
+                    <p>MERCREDI</p>
+                    <P class="plus">+</P>
+                </div>
+            </div>
+            <div class="day">
+                <div>
+                    <p>JEUDI</p>
+                    <P class="plus">+</P>
+                </div>
+            </div>
+            <div class="day">
+                <div>
+                    <p>VENDREDI</p>
+                    <P class="plus">+</P>
+                </div>
+            </div>
+            <div class="day">
+                <div>
+                    <p>SAMEDI</p>
+                    <P class="plus">+</P>
+                </div>
+            </div>
+          </div>
+          <div class="cours">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

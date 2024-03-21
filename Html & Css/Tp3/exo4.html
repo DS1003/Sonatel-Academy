@@ -5,33 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exo 4</title>
     <style>
+        *{
+            background-color: black;
+        }
         .preloader{
             position: absolute;
             width: 70px;
             height: 70px;
             border: transparent solid 2px;
-            border-top: 4px solid rgb(142, 0, 224);
-            border-left: 4px solid rgb(142, 0, 224);
+            border-bottom: 4px solid rgb(106, 2, 167);
+            border-right: 4px solid rgb(106, 2, 167);
+            border-top: 4px solid rgb(44, 44, 44);
+            border-left: 4px solid rgb(44, 44, 44);
             border-style: solid;
             margin: 0 auto;
             top: 40%;
             left: 45%;
-            border-radius: 100%;
-            animation: loading 1s infinite linear;
+            border-radius: 50%;
+            animation: loading 0.7s infinite linear;
         }
         .preloader2{
             position: absolute;
             width: 40px;
             height: 40px;
-            border: transparent solid 2px;
-            border-top: 4px solid rgb(142, 0, 224);
-            border-left: 4px solid rgb(142, 0, 224);
+            border: transparent solid 4px;
+            border-bottom: 4px solid rgb(106, 2, 167);
+            border-right: 4px solid rgb(106, 2, 167);
+            border-top: 4px solid rgb(44, 44, 44);
+            border-left: 4px solid rgb(44, 44, 44);
             border-style: solid;
             margin: 0 auto;
-            top: 40%;
-            left: 45%;
+            top: 41.5%;
+            left: 45.8%;
             border-radius: 100%;
-            animation: loading 1s infinite linear;
+           animation: loading2 0.5s infinite linear;
         }
         @keyframes loading {
             from {
@@ -41,12 +48,21 @@
                 transform: rotate(360deg);
             }
         }
+        @keyframes loading2 {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(-360deg);
+            }
+        }
 
     </style>
 </head>
 <body>
     <div class="preloader">
-        <div class="preloader2"></div>
+        
     </div>
+    <div class="preloader2"></div>
 </body>
 </html>
