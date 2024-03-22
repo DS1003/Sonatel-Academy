@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            display: flex;
+        }
+        .div1 {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(167, 0, 0);
+            position: absolute;
+            margin: 0 auto;
+            top: 45vh;
+            left: 45%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            z-index: 2;
+        }
+        .div11 {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(167, 0, 0);
+            position: absolute;
+            margin: 0 auto;
+            top: 0;
+            left: 0;
+            rotate: 45deg;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            z-index: 3;
+        }
+        .div12 {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(167, 0, 0);
+            position: absolute;
+            margin: 0 auto;
+            top: 0;
+            left: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            z-index: 4;
+            rotate: -90deg;
+        }
+        .div112 {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(167, 0, 0);
+            position: absolute;
+            margin: 0 auto;
+            top: 0;
+            left: 0;
+            rotate: -45deg;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            z-index: 5;
+        }
+
+        .div3 {
+            border-top: 4px solid white;
+            border-bottom: 4px solid white;
+            height: 150px;
+            width: 0;
+            position: relative;
+            position: absolute;
+            margin: 0 auto;
+            top: -4.5px;
+            z-index: 1;
+            align-self: center;
+        }
+        
+        .div31 {
+            border-right: 4px solid white;
+            border-left: 4px solid white;
+            height: 0;
+            width: 142px;
+            position: relative;
+            margin: 0 auto;
+            left: 0;
+            z-index: 5;
+            align-self: center;
+        }
+        .div32 {
+            border-right: 4px solid white;
+            border-left: 4px solid white;
+            height: 0;
+            width: 142px;
+            position: relative;
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            rotate: -45deg;
+            z-index: 5;
+            align-self: center;
+        }
+        .div33 {
+            border-right: 4px solid rgb(255, 255, 255);
+            border-left: 4px solid white;
+            height: 0;
+            width: 142px;
+            position: relative;
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            rotate: 45deg;
+            z-index: 5;
+            align-self: center;
+        }
+        .div1:hover .div3 {
+            transition: width 1s;
+            width: 100%;
+        }
+        .div1:hover .div31 {
+            transition: height 3s ease-in-out;
+            height: 100%;
+            transition-delay: 1s;
+            /*---- Temps de retour -----*/
+
+        }
+        .div1:hover .div32 {
+            transition: height 3s ease-in-out;
+            height: 100%;
+            transition-delay: 3s;
+        }
+        .div1:hover .div33 { 
+            transition: height 3s ease-in-out;
+            height: 100%;
+            transition-delay: 4s;
+        }
+        p {
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+            position: relative;
+            
+        }
+        span {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div class="div3"></div>
+        <div class="div31"></div>
+        <div class="div32"></div>
+        <div class="div33"></div>
+
+        <div class="div11"></div>
+    </div>
+</body>
+</html>
