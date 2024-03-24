@@ -1,0 +1,86 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transit 2</title>
+    <style>
+        body{
+            height: 97vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hoverable {
+            border: 3px solid gray ;
+            width: 12vw;
+            height: 7vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; 
+        }
+        p {
+            font-size: 25px;
+            color: brown;
+            z-index: 2;
+        }
+        .div1 {
+            background-color: brown;
+            width: 250%;
+            height: 30vh;
+            position: absolute;
+            right: -189%;
+            top : -120%;
+            rotate:  90deg;
+        }
+        .div2 {
+            background-color: brown;
+            width: 250%;
+            height: 30vh;
+            position: absolute;
+            left: -189%;
+            top : -120%;
+            rotate: 90deg;
+        }
+        
+        .hoverable:hover .div1 {
+            transition: rotate 2s;
+            rotate: 0deg;
+        }
+
+        .hoverable:hover .div2 {
+            transition: rotate 2s;
+            rotate: 180deg;
+        }
+        .hoverable:hover p {
+            transition: color 2s;
+            color: rgb(231, 231, 231);
+        }
+        
+        /*--------- Retour d'effet ------------*/
+        .hoverable:not(:hover) .div1 {
+            transition: rotate 2s;
+            rotate: (90deg);
+        }
+
+        .hoverable:not(:hover) .div2 {
+            transition: rotate 2s;
+            rotate: (180deg);
+        }
+        .hoverable:not(:hover) p {
+            transition: color 2s;
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <div class="hoverable">
+        <p>Hoverable</p>
+        <div class="div1"></div>
+        <div class="div2"></div>
+    </div>
+    
+</body>
+</html>
