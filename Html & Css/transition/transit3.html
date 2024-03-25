@@ -5,36 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transit 3</title>
     <style>
-        * {
+       *{
             margin: 0;
             padding: 0;
             border: 0;
-        }
-        body {
+       }
+       body{
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
+       }
         .bouton {
             height: 10vh;
             width: 15vw;
             border: 3.5px solid gray;
+            position: relative;
             display: flex;
-            justify-content: center;
+            justify-content: center; 
             align-items: center;
+            background-color: rgb(0, 255, 115);
+            overflow: hidden;
         }
         p {
             font-size: 1.3em;
             font-weight: 600;
+            z-index: 2;
         }
-
+        .etoile {
+            background-color: rgb(255, 255, 255);
+            height: 50%;
+            width: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 1s;
+        }
+        .etoile2 {
+            background-color: rgb(255, 255, 255);
+            height: 50%;
+            width: 50%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: all 1s;
+        }
+        .etoile3 {
+            background-color: rgb(255, 255, 255);
+            height: 50%;
+            width: 50%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transition: all 1s;
+        }
+        .etoile4 {
+            background-color: rgb(255, 255, 255);
+            height: 50%;
+            width: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transition: all 1s;
+        }
+        .bouton:hover .etoile {
+            transition: top 1s, left 1s;
+            top: -15px;
+            left: -27px;
+        }
+        .bouton:hover .etoile2 {
+            transition: bottom 1s, left 1s;
+            bottom: -15px;
+            left: -27px;
+        }
+        .bouton:hover .etoile3 {
+            transition: bottom 1s, right 1s;
+            bottom: -15px;
+            right: -27px;
+        }
+        .bouton:hover .etoile4 {
+            transition: top 1s, right 1s;
+            top: -15px;
+            right: -27px;
+        }
     </style>
 </head>
 <body>
     <div class="bouton">
         <p>Pharmacy</p>
         <div class="etoile"></div>
+        <div class="etoile2"></div>
+        <div class="etoile3"></div>
+        <div class="etoile4"></div>
     </div>
 </body>
 </html>
