@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transit 11</title>
+    <style>
+        /* Remise à zéro des marges et des rembourrages */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Classe utilitaire pour la mise en flexbox */
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Styling de base du corps */
+        body {
+            height: 100vh;
+            background-color: black;
+            color: rgb(180, 180, 180);
+            overflow: hidden; /* Empêche le débordement de contenu */
+        }
+
+        /* Conteneur principal */
+        .hoverable {
+            height: 100px;
+            width: 300px;
+            border: 5px solid rgb(180, 180, 180);
+            position: relative;
+            background-color: rgb(180, 180, 180);
+            color: black;
+        }
+
+        /* Style des boîtes */
+        .boite {
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            position: absolute;
+            left: 300px; /* Déplacement initial hors de la vue */
+        }
+
+        /* Style du texte */
+        span {
+            font-size: 2.5em;
+        }
+
+        /* Style spécifique pour le texte */
+        .text {
+            color: rgb(180, 180, 180);
+        }
+
+        /* Animation des boîtes */
+        .boite {
+            transition: transform 0.1s 0.1s, left 1s, opacity 1.8s 0.1s; /* Transition pour le déplacement, la rotation et l'opacité */
+            left: 0; /* Position initiale */
+        }
+
+        /* Style de la première boîte lors du survol */
+        .boite1 {
+            background-color: black;
+        }
+
+        /* Style de la deuxième boîte lors du survol */
+        .boite2 {
+            background-color: black;
+        }
+
+        /* Animation au survol de la première boîte */
+        .hoverable:hover .boite1 {
+            transform: rotateY(180deg); /* Rotation de 180 degrés */
+            left: -500px; /* Déplacement vers la gauche */
+            opacity: 0; /* Disparition */
+        }
+
+        /* Animation au survol de la deuxième boîte */
+        .hoverable:hover .boite2 {
+            transform: rotateY(-180deg); /* Rotation de -180 degrés */
+            left: 500px; /* Déplacement vers la droite */
+            opacity: 0; /* Disparition */
+        }
+
+        /* Animation au survol pour le texte */
+        .container:hover .text {
+            font-size: 1.5em; /* Réduction de la taille du texte */
+        }
+
+    </style>
+
+</head>
+<body class="flex">
+    <div class="hoverable flex">
+        <span>Hoverable</span>
+        <div class=" boite boite1 flex">
+            <span class="text">Hoverable</span>
+        </div>
+        <div class=" boite boite2 flex">
+            <span class="text">Hoverable</span>
+        </div>
+    </div>
+</body>
+</html>

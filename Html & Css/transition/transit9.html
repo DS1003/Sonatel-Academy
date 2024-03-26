@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transit 4</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+        }
+        .hoverable {
+            width: 12vw;
+            height: 7vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        p {
+            font-size: 20px;
+            color: brown;
+            font-weight: 700;
+            z-index: 2;
+            transition: all 1s;
+        }
+        .ring1 {
+            background-color: rgba(165, 42, 42, 0);
+            width: 5%;
+            height: 18%;
+            position: absolute;
+            display: flex;
+            border-radius: 50%;
+            transition: all 1.5s;
+        }
+        .ring2 {
+            background-color: brown;
+            width: 5%;
+            height: 18%;
+            position: absolute;
+            right: -50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 1s;
+        }
+        .ring3 {
+            background-color: brown;
+            width: 5%;
+            height: 18%;
+            position: absolute;
+            left: -50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 1s;
+        }
+        .hoverable:hover .ring1 {
+            transition: background-color 1s;
+            background-color: brown;
+            transition-delay: 1s;
+        }
+        .hoverable:hover .ring1 {
+            transition: background-color 1s;
+            background-color: brown;
+            transition-delay: 1s;
+        }
+        .hoverable:hover .ring1 {
+            transition: height 1s, width 1s, border-radius 1s;
+            height: 100%;
+            width: 100%;
+            border-radius: 0;
+            transition-delay: 0.3s;
+            transform-origin: 50%;
+        } 
+        .hoverable:hover .ring2{
+            transition: right 0.5s;
+            right: 35%;
+        }
+        .hoverable:hover .ring3{
+            transition: left 0.5s;
+            left: 35%;
+        }
+        .hoverable:hover p {
+            transition: color 1s;
+            color: black;
+            transition-delay: 0.5s;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="hoverable">
+        <p>Hoverable</p>
+        <div class="ring1"></div>
+        <div class="ring2"></div>
+        <div class="ring3"></div>
+    </div>
+</body>
+</html>
