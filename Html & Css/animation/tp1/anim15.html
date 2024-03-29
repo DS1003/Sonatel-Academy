@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 15</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color:#dadada;
+            
+
+        }
+        .container{
+            transform: translate(-50%, -50%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            overflow: hidden;
+            border: 5px solid rgb(0, 0, 0);
+            border-radius: 15px;
+        }
+        .container span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            font-size: 48px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-transform: uppercase;
+        }
+        .container span:nth-child(1){
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+            animation: animate 4s linear normal infinite;
+            color: rgb(253, 0, 0);
+            border: none;
+
+        }
+        .container span:nth-child(2){
+            clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+            animation: animate 4s  linear reverse infinite;
+            color: rgb(0, 0, 163);
+            border: none;
+            
+        }
+
+        @keyframes animate {
+        0% {
+            transform: translateX(100%);
+        }
+        40% {
+            transform: translateX(0);
+        }
+        80% {
+                transform: translateX(0);
+        }
+        100%{
+            transform: translateX(-100%);
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span>Loading</span>
+        <span>Loading</span>
+    </div>
+</body>
+</html>

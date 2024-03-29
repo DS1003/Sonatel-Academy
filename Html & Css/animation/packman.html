@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packman</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: border-box;
+        }
+
+        body {
+            background-color: black;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .plan {
+            height: 50%;
+            width: 50%;
+            background-color: rgb(24, 24, 24);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.1s;
+            overflow: hidden;
+            top: 200%;
+        }
+
+        .plage {
+            width: 100%;
+            height: 20%;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            transition: all 0.1s;
+        }
+
+        .point {
+            height: 5px;
+            width: 5px;
+            background-color: white;
+            border-radius: 50%;
+            position: relative;
+            transition: all 0.1s;
+        }
+
+        @keyframes dakadji {
+            from { left: -10%; }
+            to   { left: 100%; }
+        }
+
+        @keyframes daaw {
+            from { left: -10%; }
+            to   { left: 100%; }
+        }
+
+        .packman {
+            height: 15%;
+            width: 7%;
+            position: absolute;
+            background-color: rgb(139, 1, 199);
+            top: 42%;
+            left: -10%;
+            border-radius: 50%;
+            border: none;
+            overflow: hidden;
+            z-index: 3;
+            animation-name: dakadji;
+            animation-duration: 3s;
+            animation-timing-function: ease;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        .beute {
+            height: 15%;
+            width: 15%;
+            border-radius: 50%;
+            background-color: rgb(24, 24, 24);
+            position: absolute;
+            top: 23%;
+            left: 35%;
+            transition: all 0.1s;
+        }
+        .beute1 {
+            height: 15%;
+            width: 15%;
+            border-radius: 50%;
+            background-color: rgb(24, 24, 24);
+            position: absolute;
+            top: 23%;
+            left: 55%;
+            transition: all 0.1s;
+        }
+        .bouche {
+            height: 60%;
+            width: 60%;
+            background-color: rgb(24, 24, 24);
+            position: absolute;
+            rotate: 45deg;
+            left: 65%;
+            top: 25%;
+            transition: all 0.1s;
+        }
+
+        .tenta {
+            height: 30%;
+            width: 30%;
+            background-color: rgb(221, 133, 0);
+            position: absolute;
+            rotate: 45deg;
+            left: 5.48%;
+            bottom: -10%;
+            transition: all 0.1s;
+        }
+
+        .tenta2 {
+            height: 30%;
+            width: 30%;
+            background-color: rgb(221, 133, 0);
+            position: absolute;
+            rotate: 45deg;
+            left: 35%;
+            bottom: -10%;
+            transition: all 0.1s;
+        }
+
+        .tenta3 {
+            height: 30%;
+            width: 30%;
+            background-color: rgb(221, 133, 0);
+            position: absolute;
+            rotate: 45deg;
+            left: 63%;
+            bottom: -10%;
+            transition: all 0.1s;
+        }
+
+        .cible  {
+            height: 15%;
+            width: 7%;
+            position: absolute;
+            background-color: rgb(221, 133, 0);
+            top: 41%;
+            left: -10%;
+            border-radius: 50% 50% 0 0;
+            border: none;
+            z-index: 3;
+            transition: all 0.1s;
+            animation: 3s linear 1s infinite running daaw;
+        }
+
+        .cible:hover .beute1 {
+            transition: background-color 0.1s;
+            background-color: white;
+        }
+
+        .cible:hover .beute {
+            transition: background-color 0.1s;
+            background-color: white;
+        }
+
+        .box {
+            height: 50px;
+            width: 100px;
+            border-radius: 50% 50% 0 0/100% 100% 0 0;
+            background-color: #48abe0;
+            position: absolute;
+            animation: 0.5s linear infinite running maate2;
+        }
+        .box2 {
+            height: 50px;
+            width: 100px;
+            border-radius:  0 0 50% 50% / 0 0 100% 100%;
+            background-color: #48abe0;
+            position: absolute;
+            top: 50%;
+            animation: 0.5s linear infinite running maate;
+        }
+
+        .packm {
+            border: 2px solid purple;
+            height: 100px;
+            width: 100px;
+            display: flex;
+            position: relative;
+            left: 0;
+            animation: 3s linear infinite alternate poursuite;
+        }        
+
+        @keyframes maate {
+            from {
+                rotate: 0deg;
+            }
+            to {
+                rotate: 35deg;
+            }
+        }
+
+        @keyframes maate2 {
+            from {
+                rotate: 0deg;
+            }
+            to {
+                rotate: -35deg;
+            }
+        }
+
+
+        @keyframes poursuite {
+            0% {
+                
+                left: 0;
+            }
+            100% {
+                
+                left: 85%;
+            }
+            0% {transform: rotateY(180deg);}
+            1%{transform: rotateY(0deg);}
+            100% {transform: rotateY(-180deg);}
+        }
+
+        @keyframes tourner {
+            0% {transform: rotateY(180deg);}
+            100% {transform: rotateY(-180deg);}
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <div class="packm">
+        <div class="box"></div>
+        <div class="box2"></div>
+    </div>
+
+    <!-- <div class="plan">
+        <div class="packman">
+            <div class="beute"></div>
+            <div class="bouche"></div>  
+        </div>
+        <div class="cible">
+            <div class="beute"></div>
+            <div class="beute1"></div>
+            <div class="tenta"></div>
+            <div class="tenta2"></div>
+            <div class="tenta3"></div>
+        </div>
+        <div class="plage">
+            <div class="point">      
+            </div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+        </div>
+    </div> -->
+</body>
+</html>

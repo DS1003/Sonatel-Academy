@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tp7.css">
+    <title>Animation 7</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(34, 34, 34);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cadre{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+        }
+        .pendule{
+            position: absolute;
+            top: 140px;
+            left: 100px;
+            width: 200px;
+            height: 40px;
+            padding-top: 100px;
+            border-top: 10px solid white;
+            border-radius: 10px;
+        }
+        .pendule .ball{
+            position: relative;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            float: left;
+            transform-origin: 50% -100px;
+        }
+        .pendule .ball:before{
+            content: "";
+            position: absolute;
+            display: block;
+            top: -100px;
+            left: 19px;
+            width: 1px;
+            height: 100px;
+            background-color:white;
+        }
+        .pendule .ball1{
+            animation: ball1 0.8s ease-out infinite alternate;
+        }
+        .pendule .ball5{
+            animation: ball5 0.8s ease-out .8s infinite alternate;
+        }
+        @keyframes ball1{
+            0%,50%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(50deg);
+            }
+        }
+        @keyframes ball5{
+            0%,50%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(-50deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cadre">
+        <div class="pendule">
+            <div class="ball ball1"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball ball5"></div>
+        </div>
+    </div>
+</body>
+</html>

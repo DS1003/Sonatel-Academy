@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .container {
+        position: absolute;
+        bottom: 0;
+        height: 50vh;
+        width: 100%;
+        background: url("bg.jpeg") no-repeat bottom;
+        background-size: 100% 60%;
+        z-index: 2;
+        overflow: hidden;
+      }
+
+      div:nth-child(1),
+      div:nth-child(2) {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 0.8;
+        z-index: 3;
+      }
+
+      img {
+        width: 150px;
+        height: 150px;
+      }
+
+      .lune {
+        background-color: #010020;
+        animation: valser 3s 4s alternate 2;
+        img {
+          position: absolute;
+          right: 10%;
+          bottom: -100%;
+          /* visibility: hidden; */
+        }
+      }
+
+      .soleil {
+        animation: valser 3s 2s alternate 2;
+        background-color: #fb2e04;
+        img {
+          position: absolute;
+          left: 10%;
+          top: 10px;
+          /* visibility: hidden; */
+        }
+      }
+
+      @keyframes valser {
+        
+        to {
+          bottom: -100%;
+          z-index: 4;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lune">
+      <img src="croissant-de-lune.png" />
+    </div>
+    <div class="soleil">
+      <img src="cercle.png" alt="" />
+    </div>
+    <div class="container"></div>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=P, initial-scale=1.0">
+    <title>Animation 2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: border-box;
+        }
+
+        body {
+            background-color: black;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes teudje{
+            from { 
+                border-top: 40px solid transparent;
+                border-bottom: 40px solid transparent;
+                border-right: 80px solid rgb(0, 0, 0);
+            }
+            to { 
+                border-top: 40px solid transparent;
+                border-bottom: 40px solid transparent;
+                border-right: 0px solid rgb(0, 0, 0);
+            }
+        }
+
+        .packman {
+            height: 20vh;
+            width: 10vw;
+            border-radius: 50%;
+            background-color: white;
+            position: relative;
+        }
+
+        .guemigne {
+            height: 0;
+            width: 0;
+            display: inline-block;
+            border-top: 40px solid transparent;
+            border-bottom: 40px solid transparent;
+            border-right: 80px solid rgb(199, 71, 71);
+            position: fixed;
+        }
+
+        .tete {
+            height: 6.5vh;
+            width: 5vw;
+            background-color: blueviolet;
+            border-radius: 100px 100px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="">
+        <div class="tete"></div>
+    </div>
+    .
+</body>
+</html>

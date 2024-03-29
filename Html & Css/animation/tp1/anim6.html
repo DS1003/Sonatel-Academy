@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 6</title>
+    <link rel="stylesheet" href="tp6.css">
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content : center;
+            align-items : center;
+            background-color: #282828;
+        }
+        
+        .ball{
+            width: 50px; height:50px;
+            background-color: white;
+            margin-top : -50px;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            animation: move-ball 1.5s alternate  linear infinite ;
+            
+        }
+        
+        .bar{
+            width: 450px; height:2.5px;
+            background-color: white;
+            animation: deplacerBar 3s linear infinite;
+            display: flex;
+        }
+        
+        @keyframes deplacerBar{
+            0%{
+            transform: rotate(-23deg);
+            }
+            50%{
+            transform: rotate(23deg);
+            }
+            100%{
+            transform: rotate(-23deg);
+            }
+        }
+        
+        
+        @keyframes move-ball{
+        
+            100%{
+            transform: translateX(400px)  rotatez(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class = "bar"> 
+        <div class = "ball"> </div>
+  </div>
+</body>
+</html>

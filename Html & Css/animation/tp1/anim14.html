@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 14</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(31, 31, 31);
+            position: relative;
+        }
+        .text{
+            color: white;
+            font-size: 2em;
+            border: 2px solid;
+            border-left: none;
+            border-right: none;
+            text-transform: uppercase;
+            position: absolute;
+            z-index: 3;
+        }
+        .anim{
+            position: absolute;
+            bottom: 0;
+            background-color: rgb(226, 221, 221);
+            animation-name: backAnimation;
+            animation-timing-function: linear;
+            animation-fill-mode: backwards;
+            animation-iteration-count: infinite;
+        }
+
+        .an1{ left: 0%;   animation-duration: 4s;}
+        .an2{ left: 10%;  animation-delay: .2s;}
+        .an3{ left: 20%;  animation-duration: 7s;}
+        .an4{ left: 30%;  animation-delay: .6;}
+        .an5{ left: 40%;  animation-delay: 1s;}
+        .an6{ left: 50%;  animation-duration: 5s;}
+        .an7{ left: 60%;  animation-delay: .3s;}
+        .an8{ left: 70%;  animation-duration: 12s;}
+        .an9{ left: 80%;  animation-duration: 14s;}
+        .an10{ left: 90%;  animation-duration: 5s; animation-delay: .6s;}
+        .an11{ left: 65%;  animation-duration: 5s;}
+        .an12{ left: 35%;  animation-delay: .3s; animation-duration: 4s;}
+        .an13{ left: 55%;  animation-duration: 12s;}
+        .an14{ left: 55%;  animation-duration: 14s;}
+        .an15{ left: 25%;  animation-duration: 5s; animation-delay: .6s;}
+
+        @keyframes backAnimation {
+            0%{
+                transform: translateY(0px) rotate(-360deg);
+                background-color: rgba(183, 0, 255, 0.445);
+                height: 50px;
+                width: 50px;
+            }
+            100%{
+                transform: translateY(-100vh) rotate(0deg);
+                background-color: rgb(72, 69, 69);
+                height: 25px;
+                width: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text">Background Animation</div>
+        <div class="anim an1"></div>
+        <div class="anim an2"></div>
+        <div class="anim an3"></div>
+        <div class="anim an4"></div>
+        <div class="anim an5"></div>
+        <div class="anim an6"></div>
+        <div class="anim an7"></div>
+        <div class="anim an8"></div>
+        <div class="anim an9"></div>
+        <div class="anim an10"></div>
+        <div class="anim an11"></div>
+        <div class="anim an12"></div>
+        <div class="anim an13"></div>
+        <div class="anim an14"></div>
+        <div class="anim an15"></div>
+    </div>
+</body>
+</html>

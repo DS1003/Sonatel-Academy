@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 8</title>
+
+    <style>
+        body{
+            height: 100vh;
+            background: #000;
+            perspective: 1000px;
+            overflow: hidden;
+        }
+
+        .boomerang{
+            height: 100px;
+            width: 100px;
+            background: url('./boomerang.png') no-repeat;
+            background-size: contain;
+            position: absolute;
+            bottom: 10%;
+            animation: boomerang 3s infinite,scale 3s infinite;
+        }
+
+        @keyframes boomerang {
+            
+            20%{
+                transform: translateX(500%) translateY(-400%) rotate(360deg);
+            }
+
+            50%{
+                transform: translateX(700%) translateY(50%);
+            }
+
+            100%{
+                transform: translateX(-0%) translateY(10%) rotate(-360deg);
+            }
+        }
+
+        @keyframes scale {
+            20%{
+                scale: 1;
+            }
+
+            50%{
+                scale: 1.5;
+            }
+
+            100%{
+                scale: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="boomerang"></div>
+</body>
+</html>

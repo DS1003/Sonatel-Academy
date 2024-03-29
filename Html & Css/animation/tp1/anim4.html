@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 4</title>
+    <style>
+        *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        }
+        body, .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        body{
+        height: 100vh;
+        background-color: rgb(31, 31, 31);
+        }
+        .container span{
+        font-size: 4em;
+        text-transform: uppercase;
+        animation: loading 3s linear infinite;
+        letter-spacing: 25px;
+        font-weight: 800;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: red;
+        }
+        #l{ animation-delay: 0s;}
+        #o{ animation-delay: .2s;}
+        #a{ animation-delay: .4s;}
+        #d{ animation-delay: .6s;}
+        #i{ animation-delay: .8s;}
+        #n{ animation-delay: 1s;}
+        #g{ animation-delay: 1.2s;}
+
+
+        @keyframes loading {
+        0%,100%{
+            opacity: 0;
+            letter-spacing: 25px;
+            color: red;
+        }    
+        0%{ transform: translateX(-25px); }
+        10%{ opacity: 1;}
+        50%{ letter-spacing: -20px; opacity: 1;}
+        100%{
+            transform: translateX(20px);
+            color: blue;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span id="l">l</span>
+        <span id="o">o</span>
+        <span id="a">a</span>
+        <span id="d">d</span>
+        <span id="i">i</span>
+        <span id="n">n</span>
+        <span id="g">g</span>
+    </div>
+</body>
+</html> 

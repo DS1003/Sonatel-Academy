@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 3</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-color: #009400;
+            perspective: 1000px;
+        }
+        .boite{
+            height: 100px;
+            width: 100px;
+            border-radius: 10px;
+            background-color: white;
+            animation: animRotate 2s linear infinite forwards;
+        }
+
+
+        @keyframes animRotate {
+            0%{
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            50%{
+                transform: rotateX(-180deg) rotateY(0deg);
+            }
+            100%{
+                transform: rotateX(-180deg) rotateY(-180deg);
+            }
+        } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="boite"></div>
+    </div>
+</body>
+</html>
+
+
+

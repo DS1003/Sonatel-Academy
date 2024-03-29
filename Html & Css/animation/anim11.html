@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/1daabdcd49.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes tourne {
+            form {
+                rotate: 0deg;
+            }
+            to {
+                rotate: 360deg;
+            }
+        }
+
+        .btns {
+            height: 20vh;
+            width: 10vw;
+            border: 3px solid darkblue;
+            border-radius: 100px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .contour {
+            height: 90%;
+            width: 90%;
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: all 1.5s;
+        }
+
+        .icone  {
+            height: 80%;
+            width: 80%;
+            background-color: transparent;
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+
+        }
+
+        img {
+            height: 80%;
+            width: 80%;
+        }
+
+        .btns:hover .contour {
+            animation: 0.5s linear 0.5s infinite running tourne;
+            border: 2px darkblue ;
+            border-style: dashed;
+        }
+        .btns:hover .icone {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="btns">
+        <div class="contour">
+            
+        </div>
+        <div class="icone">
+            <img src="du-jus-dorange.png" alt="">
+        </div>
+    </div>
+    <div class="btns">
+        <div class="contour">
+            
+        </div>
+        <div class="icone">
+            <img src="la-toile.png" alt="">
+        </div>
+    </div>
+    <div class="btns">
+        <div class="contour">
+            
+        </div>
+        <div class="icone">
+            <img src="pas-damour.png" alt="">
+        </div>
+    </div>
+    <div class="btns">
+        <div class="contour">
+            
+        </div>
+        <div class="icone">
+            <img src="cadeau.png" alt="">
+        </div>
+    </div>
+</body>
+</html>

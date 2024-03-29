@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body{
+            height: 100vh;
+            background: #e6e6e6;
+            padding: 4rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ball{
+            background: url('./basketball.jpeg');
+            position: relative;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-size: 150%;
+            background-position: center;
+            animation: 0.5s alternate ease-in infinite bondel;
+        }
+
+        @keyframes bondel {
+            to{
+                top: 500px;
+                height: 60px;
+                box-shadow: 0px 20px 0px 0px rgba(0, 0, 0, 0.082);
+            }
+
+            0%{
+                top: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ball">
+
+    </div>
+</body>
+</html>

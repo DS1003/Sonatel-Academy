@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle</title>
+    <style>
+        *{
+            margin: 0;
+            border: border-box;
+        }
+        body{
+            background-color: #000000;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .box{
+            height: 10%;
+            width: 30%;
+            border: 3px solid rgb(43, 43, 43);
+            border-radius: 50px;
+            display: flex;
+            position: relative;
+        }
+        .box1{
+            height: 95%;
+            width: 15.7%;
+            border: 3px solid ;
+            background-color: blueviolet;
+            border-radius: 50px;
+            display: flex;
+            position: absolute;
+            transition: all 1s;
+        }
+        
+        .box:hover .box1 {
+            transition: width 1.5s, background-color 1s 0.4s;
+            width: 75%;
+            background-color: gray;
+        }
+
+        .box:hover .box1 {
+            background-color: rgb(255, 153, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1"></div>
+    </div>
+</body>
+</html>

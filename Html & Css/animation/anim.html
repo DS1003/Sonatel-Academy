@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo 15</title>
+    <style>
+        *{
+            margin: 0;
+            border: border-box;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes dakadji {
+            0% { left: -100%; }
+            50% {
+                
+            }
+            100%   { left: 100%; }
+        }
+
+        .container {
+            height: 8%;
+            width: 20%;
+            border: 2px solid black;
+            border-radius: 15px;   
+            overflow: hidden; 
+            
+        }
+        .div1 {
+            height: 45%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .div2 {
+            height: 45%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 50px;
+            color: red;
+            position: absolute;
+            top: 8%;
+        }
+        #htop {
+            animation: 3s linear 1s infinite reverse dakadji;
+
+        }
+        #hbottom {
+            animation: 3s linear 1s infinite running dakadji;
+        }
+        .div2>h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 50px;
+            position: absolute;
+            color: darkblue;
+            top: -95%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="div1"><h1 id="htop">LOADING</h1></div>
+        <div class="div2"><h1 id="hbottom">LOADING</h1></div>
+    </div>
+</body>
+</html>

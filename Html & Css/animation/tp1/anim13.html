@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 13</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(34, 34, 34);
+        }
+
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 100px;
+            height: 100px;
+            animation: animate 1s linear infinite;
+
+        }
+        .container span{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            animation: rotate 1s linear infinite;
+        }
+
+        .container span:nth-child(1){
+            top: 0;
+            left: 0;
+            background-color: #00D9AD;
+        }
+
+        .container span:nth-child(2){
+            top: 0;
+            right: 0;
+            background-color:   #FE5357;
+        }
+
+        .container span:nth-child(3){
+            bottom: 0;
+            left: 0;
+            background-color: #FEE495;
+        }
+
+        .container span:nth-child(4){
+            bottom: 0;
+            right: 0;
+            background-color: #016DAD;
+        }
+
+        @keyframes animate{
+            0%{
+                width: 100px;
+                height: 100px;
+            }
+            50%{
+                width: 150px;
+                height: 150px;
+            }
+            100%{
+                width: 100px;
+                height: 100px;
+            }
+
+        }
+
+        @keyframes rotate{
+            0%{
+                transform: rotate(0deg);
+            }
+            10%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(90deg);
+            }
+            90%{
+                transform: rotate(90deg);
+            }
+            100%{
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+   </div>
+    
+</body>
+</html>
