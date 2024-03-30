@@ -60,5 +60,6 @@
     "*.embeddedhtml": "html",
     "persolib_c": "c",
     "stdio.h": "c"
-  }
+  },
+  "liveServer.settings.port": 5501
 }
