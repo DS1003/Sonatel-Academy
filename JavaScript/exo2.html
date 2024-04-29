@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            background-color: rgb(255, 255, 255);
+            justify-content: center;
+            align-items: center;
+        }
+
+        body>div {
+            height: 400px;
+            width: 400px;
+            border-radius: 50%;
+            background-color: rgb(29, 29, 29);
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        const boule = document.querySelector('div');
+        boule.addEventListener('mouseover', bonjour);
+
+        function bonjour() {
+            /* alert("Bonjour !!!"); */
+            let opac = 1;
+            let timer = setTimeout(() => {
+                opac -= 0.1;
+                boule.style.opacity = opac;
+            }, 10000);
+
+        };
+
+    </script>
+</body>
+
+</html>

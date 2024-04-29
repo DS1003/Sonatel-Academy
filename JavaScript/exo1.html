@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi JS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            background-color: rgb(75, 75, 75);
+            justify-content: center;
+            align-items: center;
+        }
+        body>div {
+            height: initial;
+            width: 500px;
+            background-color: rgb(29, 29, 29);
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .parasyte {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background-color: black ;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+    <script lang="JS">
+         function creerElementsHTML(n) {
+            const parent = document.querySelector('div');
+
+            for (let i = 0; i < n; i++) {
+                const nouvelElement = document.createElement('div');
+                nouvelElement.classList.add('parasyte');
+                nouvelElement.style.backgroundColor = "rgb(0,0,0)"; // Attribue une couleur de fond aléatoire
+                parent.appendChild(nouvelElement);
+
+                // Ajout d'un écouteur d'événement pour le survol de la souris
+                nouvelElement.addEventListener('mouseover', function() {
+                    this.style.backgroundColor = couleurAleatoire();
+                });
+
+                // Réinitialisation de la couleur lorsque le survol de la souris est terminé
+                nouvelElement.addEventListener('mouseout', function() {
+                    this.style.backgroundColor = couleurAleatoire();
+                });
+            }
+        }
+
+        function couleurAleatoire() {
+            const r = Math.ceil(Math.random() * 255);
+            const g = Math.ceil(Math.random() * 255);
+            const b = Math.ceil(Math.random() * 255);
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+        
+        creerElementsHTML(2500);
+    </script>
+</body>
+</html>
