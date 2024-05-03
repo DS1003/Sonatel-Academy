@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de Mots</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-purple-300 flex justify-center items-center h-screen">
+    <div class="container mx-auto w-3/5 bg-purple-700 p-10 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold text-center text-white mb-6">Jeu de Mots</h1>
+        <div class="game-area text-center mb-8 flex items-center flex-col gap-6">
+            <div id="word-display" class="text-4xl font-semibold text-white mb-4">Mot</div>
+            <input type="text" id="word-input" class="px-4 py-2 w-64 text-lg border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Entrez un mot...">
+        </div>
+        <div class="scoreboard text-center mb-6">
+            <h2 class="text-xl font-semibold mb-2">Score</h2>
+            <p id="score" class="text-2xl font-bold text-white">0 XP</p>
+        </div>
+        <div class="timer text-center mb-6">
+            <h2 class="text-xl font-semibold mb-2">Temps Restant</h2>
+            <p id="timer" class="text-2xl font-bold text-white">60s</p>
+        </div>
+        <div class="difficulty text-center">
+            <h2 class="text-xl font-semibold mb-2">Niveau de Difficulté</h2>
+            <div class="flex justify-center">
+                <button id="easy-btn" class="px-4 py-2 bg-blue-500 text-white text-lg font-semibold rounded-md shadow-md mr-4 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Facile</button>
+                <button id="medium-btn" class="px-4 py-2 bg-blue-500 text-white text-lg font-semibold rounded-md shadow-md mr-4 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Moyen</button>
+                <button id="hard-btn" class="px-4 py-2 bg-blue-500 text-white text-lg font-semibold rounded-md shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Difficile</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Liste des mots français
+        const mots = ["chat", "chien", "maison", "voiture", "arbre", "fleur", "soleil", "plage", "montagne", "livre", "ordinateur", "musique"];
+
+        // Timer Countdown
+        let timerDisplay = document.getElementById('timer');
+        let timeLeft = 10; // Réduit pour des tests plus rapides
+        let score = 0;
+        let currentWord = "";
+        let replayButton;
+
+        function updateTimer() {
+            if (timeLeft > 0) {
+                timerDisplay.textContent = timeLeft + 's';
+                timeLeft--;
+            } else {
+                timerDisplay.textContent = 'Temps écoulé';
+                clearInterval(timerInterval);
+                const scoreDisplay = document.getElementById('score');
+                scoreDisplay.textContent = score + ' XP';
+                if (!replayButton) {
+                    replayButton = document.createElement('button');
+                    replayButton.textContent = "Rejouer";
+                    replayButton.className = "px-4 py-2 bg-green-500 text-white text-lg font-semibold rounded-md shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2";
+                    replayButton.addEventListener('click', function () {
+                        startGame();
+                    });
+                    scoreDisplay.parentNode.appendChild(replayButton);
+                }
+                document.getElementById('word-input').setAttribute("disabled", true);
+            }
+        }
+
+        let timerInterval;
+
+        // Afficher un mot aléatoire
+        function afficherMot() {
+            currentWord = mots[Math.floor(Math.random() * mots.length)];
+            document.getElementById('word-display').textContent = currentWord;
+        }
+
+        // Vérifier si le mot soumis est correct
+        function checkInput() {
+            const motSoumis = document.getElementById('word-input').value.trim().toLowerCase();
+            if (motSoumis === currentWord) {
+                score++;
+                document.getElementById('score').textContent = score + ' XP';
+                //rajoute +5s au temps s'il trouve un mot
+                timeLeft += 2;
+                document.getElementById('timer').textContent = timeLeft +'s';
+                afficherMot();
+                document.getElementById('word-input').value = '';
+                afficherMot();
+            }
+        }
+
+        // Démarrer le jeu
+        function startGame() {
+            timeLeft = 10; // Réinitialise le temps pour chaque nouvelle partie
+            score = 0; // Réinitialise le score
+            afficherMot(); // Affiche un mot aléatoire
+            document.getElementById('timer').textContent = timeLeft + 's'; // Réinitialise le timer
+            document.getElementById('score').textContent = score + ' XP'; // Réinitialise le score affiché
+            document.getElementById('word-input').removeAttribute("disabled"); // Réactive l'input
+            if (replayButton) {
+                replayButton.remove();
+                replayButton = null;
+            }
+            timerInterval = setInterval(updateTimer, 1000); // Lance le timer
+        }
+
+        // Initialisation du jeu
+        startGame();
+
+        // Vérifier le mot pendant la saisie
+        document.getElementById('word-input').addEventListener('input', function () {
+            checkInput();
+        });
+    </script>
+</body>
+
+</html>

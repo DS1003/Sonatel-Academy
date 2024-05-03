@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Connexion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-image: linear-gradient(to right,#cc00ff, #4f46e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #ffffff62;
+            width: 24rem;
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        label {
+            padding-left: .5em;
+            font-weight: 800;
+            font-size: .8em;
+            color: white;
+        }
+
+        .input-container {
+            width: 100%;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            border: 1px solid #d1d5db;
+            outline: none;
+            margin-top: .25em;
+        }
+
+        input:focus {
+            border-color: #805ad5;
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+            visibility: hidden;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.5rem;
+            background-color: #4f46e5;
+            color: #ffffff;
+            font-weight: 900;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #6d28d9;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="loginForm">
+        <h2>Inscription</h2>
+
+        <div class="input-container">
+            <label for="prenom">Prénom</label>
+            <input id="prenom" type="text" placeholder="Votre prénom">
+            <span id="errorprenom" class="error-message">Ce champ est requis</span>
+        </div>
+
+        <div class="input-container">
+            <label for="nom">Nom</label>
+            <input id="nom" type="text" placeholder="Votre nom">
+            <span class="error-message">Ce champ est requis</span>
+        </div>
+
+        <div class="input-container">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" placeholder="mouhaleecr7@gmail.com">
+            <span class="error-message">Ce champ est requis</span>
+        </div>
+
+        <div class="input-container">
+            <label for="motdepasse">Mot de passe</label>
+            <input id="motdepasse" type="password" placeholder="Votre mot de passe">
+            <span class="error-message">Ce champ est requis</span>
+        </div>
+
+        <div class="input-container">
+            <label for="confirmation">Confirmer le mot de passe</label>
+            <input id="confirmation" type="password" placeholder="Confirmez votre mot de passe">
+            <span class="error-message">Ce champ est requis</span>
+        </div>
+
+        <button id="logbtn" type="button">Se connecter</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        const logbtn = document.getElementById('logbtn');
+
+        //cacher les messages d'erreurs par défaut
+        const messages = document.querySelectorAll('.error-message');
+
+        logbtn.addEventListener('click', function () {
+            // Afficher les messages d'erreur appropriés si les champs sont vides
+            messages.forEach(function (message) {
+                message.style.visibility = 'hidden';
+            });
+
+            // Retrieve input values
+            const prenom = document.getElementById('prenom').value;
+            const nom = document.getElementById('nom').value;
+            const email = document.getElementById('email').value;
+            const motdepasse = document.getElementById('motdepasse').value;
+            const confirmation = document.getElementById('confirmation').value;
+
+            // Validate input values
+            if (prenom === '') {
+                document.getElementById('errorprenom').style.visibility = 'visible';
+            } else if (prenom.length < 4 || prenom.length > 30) {
+                document.getElementById('errorprenom').textContent = 'Le prénom doit être compris entre 4 et 30 caractères';
+                document.getElementById('errorprenom').style.visibility = 'visible';
+            }
+
+            if (nom === '') {
+                document.getElementById('nom').nextElementSibling.style.visibility = 'visible';
+            } else if (nom.length < 4 || nom.length > 30) {
+                document.getElementById('nom').nextElementSibling.textContent = 'Le nom doit être compris entre 4 et 30 caractères';
+                document.getElementById('nom').nextElementSibling.style.visibility = 'visible';
+            }
+
+            if (email === '') {
+                document.getElementById('email').nextElementSibling.style.visibility = 'visible';
+            } else if (!email.includes('@')) {
+                document.getElementById('email').nextElementSibling.textContent = 'L\'email n\'est pas valide';
+                document.getElementById('email').nextElementSibling.style.visibility = 'visible';
+            }
+
+            if (motdepasse === '') {
+                document.getElementById('motdepasse').nextElementSibling.style.visibility = 'visible';
+            } else if (motdepasse.length < 8 || motdepasse.length > 30) {
+                document.getElementById('motdepasse').nextElementSibling.textContent = 'Le mot de passe doit être compris entre 8 et 30 caractères';
+                document.getElementById('motdepasse').nextElementSibling.style.visibility = 'visible';
+            }
+
+            if (confirmation === '') {
+                document.getElementById('confirmation').nextElementSibling.style.visibility = 'visible';
+            } else if (motdepasse !== confirmation) {
+                document.getElementById('confirmation').nextElementSibling.textContent = 'Les mots de passe ne correspondent pas';
+                document.getElementById('confirmation').nextElementSibling.style.visibility = 'visible';
+            }
+        });
+    </script>
+</body>
+
+</html>
