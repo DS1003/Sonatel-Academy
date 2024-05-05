@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /* Votre CSS existant... */
         * {
             margin: 0;
             padding: 0;
@@ -40,7 +41,7 @@
         }
 
         .todo {
-            width: 50rem;
+            width: 70%;
             height: 80%;
             padding: 1rem;
             background-color: #f4cf1438;
@@ -191,6 +192,7 @@
             justify-content: center;
             padding: 1rem;
             flex-direction: row;
+            overflow: scroll;
         }
 
         .list>#check {
@@ -201,45 +203,79 @@
             align-self: center;
         }
 
+        /* Ajoutez le style pour le modal */
         .modal {
-            height: 30%;
-            width: 25%;
-            border-radius: .5rem;
-            position: absolute;
-            top: 30%;
-            background-color: #f5fcff;
+            display: none;
+            /* Par défaut, le modal est caché */
+            position: fixed;
+            /* Position fixée pour rester au-dessus du contenu */
+            z-index: 1;
+            /* Assure que le modal est au-dessus du reste du contenu */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Pleine largeur */
+            height: 100%;
+            /* Pleine hauteur */
+            overflow: auto;
+            /* Ajoute un défilement si nécessaire */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Couleur de fond sombre avec transparence */
+            padding-top: 100px;
+            /* Ajoutez un peu de marge en haut pour le contenu */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            /* Centrez le modal sur l'écran */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 30%;
+            /* Ajustez la largeur du modal si nécessaire */
+            border-radius: 10px;
             display: flex;
+            gap: .7rem;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            span {
-                font-size: 1.5rem;
-                font-weight: 800;
+            justify-content: center;
+
+            input {
+                width: 90%;
+                height: 3rem;
+                border: 1px solid #56776c;
+                background-color: rgba(255, 255, 255, 0.466);
+                border-radius: .5rem;
+                padding: 1rem;
                 color: #56776c;
-                cursor: pointer;
-                box-shadow: currentColor 1 0 0 0 1;
-                position: absolute;
-                top: 6%;
-                right:5%;
+                font-size: 1rem;
+                font-weight: 500;
             }
+        }
+
+        /* Ajoutez un bouton de fermeture pour le modal */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 20%;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
+    <!-- Votre contenu HTML existant... -->
     <h1>TODO</h1>
     <div class="todo">
-
-        <!-- <div class="left">
-            <div class="ready">
-                <h1>Ready</h1>
-                <h2>07</h2>
-            </div>
-            <div class="notyet">
-                <h1>To do</h1>
-                <h2>05</h2>
-            </div>
-        </div> -->
         <div class="right">
             <h2>To do : </h2>
             <div class="list">
@@ -249,70 +285,80 @@
                 </div>
             </div>
             <div class="addtodo">
-                <button class="addbtn" type="submit">Add</button>
+                <!-- Ajoutez un ID au bouton "Ajouter" -->
+                <button class="addbtn" id="addBtn" type="submit">Add</button>
                 <button class="delbtn">Delete</button>
                 <label for="">Chose date</label>
                 <input id="" type="date">
             </div>
-
         </div>
     </div>
+
+    <!-- Le modal -->
     <div id="modal" class="modal">
-        <span class="close">&times;</span>
-        <input type="text" id="todoDescription" placeholder="Enter your to do...">
-        <input type="time">
-        <button id="addTodoBtn">Add Todo</button>
+        <!-- Contenu du modal -->
+        <div class="modal-content">
+            <!-- Ajoutez un bouton de fermeture -->
+            <span class="close">&times;</span>
+            <!-- Ajoutez un champ de texte pour la tâche -->
+            <input type="text" id="todoDescription" placeholder="Enter your to do...">
+            <!-- Ajoutez un bouton pour ajouter la tâche -->
+            <button id="addTodoBtn">Add Todo</button>
+        </div>
     </div>
+
     <script>
-        // Get the modal
+        // Récupérez le modal
         let modal = document.getElementById("modal");
 
-        // Get the button that opens the modal
-        let addbtn = document.getElementById("addbtn");
+        // Récupérez le bouton qui ouvre le modal
+        let addBtn = document.getElementById("addBtn");
 
-        // Get the <span> element that closes the modal
+        // Récupérez le bouton de fermeture du modal
         let span = document.getElementsByClassName("close")[0];
 
-        // When the user clicks the button, open the modal 
-        addbtn.onclick = function () {
+        // Récupérez la liste de tâches
+        let todoList = document.querySelector(".list");
+
+        // Associez un gestionnaire d'événement au clic pour ouvrir le modal
+        addBtn.onclick = function () {
             modal.style.display = "block";
         }
 
-        // When the user clicks on <span> (x), close the modal
+        // Associez un gestionnaire d'événement au clic pour fermer le modal
         span.onclick = function () {
             modal.style.display = "none";
         }
 
-        // When the user clicks anywhere outside of the modal, close it
+        // Fermez le modal si l'utilisateur clique en dehors de celui-ci
         window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
 
-        let input = document.querySelector(".todo")
-        let todos = document.querySelector(".todos")
-        let checkbox = document.querySelector("#checkbox")
-        let id = 0;
+        // Récupérez le bouton "Add Todo" du modal
+        let addTodoBtn = document.getElementById("addTodoBtn");
 
-        function createTodo(checked, todoName) {
-            let model = `<li>
-        <label for="check${id}">
-            <img src="/images/icon-check.svg" />
-            <input type="checkbox" id="check${id}" ${checked == true ? "checked" : ""}/>
-        </label>
-        <p>${todoName}</p>
-        <img src="/images/icon-cross.svg" class="close" />
-    
-        </li>`
-            id++
-            todos.innerHTML += model;
-            input.value = ""
+        // Associez un gestionnaire d'événement au clic sur le bouton "Add Todo"
+        addTodoBtn.onclick = function () {
+            // Récupérez la description de la tâche depuis le champ de texte du modal
+            let todoDescription = document.getElementById("todoDescription").value;
+
+            // Créez un nouvel élément de tâche avec la description récupérée
+            let newTodo = document.createElement("div");
+            newTodo.classList.add("have-todo");
+            newTodo.innerHTML = `
+            <input id="check" type="checkbox">
+            <input id="description" type="text" style="" value="${todoDescription}">
+        `;
+
+            // Ajoutez le nouvel élément de tâche à la liste de tâches
+            todoList.appendChild(newTodo);
+
+            // Fermez le modal
+            modal.style.display = "none";
         }
-
-
-        input.addEventListener("dblclick", () => createTodo(checkbox.checked, input.value));
-
     </script>
 </body>
 
