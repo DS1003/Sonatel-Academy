@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/JavaScript/Projet/template/assets/css/main.css" />
+    <link rel="stylesheet" href="/JavaScript/Projet/template/assets/css/apprenants.css" />
+    <script
+      src="https://kit.fontawesome.com/d2ba3c872c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <input type="checkbox" id="menu_checkbox" />
+
+    <!-- HEADER -->
+    <header class="header">
+      <!-- FLEX-LEFT -->
+      <div class="flex-left">
+        <label for="menu_checkbox">
+          <div><i class="fa fa-bars" aria-hidden="true"></i></div>
+          <div><i class="fa-solid fa-circle-arrow-right"></i></div>
+        </label>
+        <div class="icons">
+          <div>
+            <div>
+              <div id="toggle-btn" class="fas fa-sun"></div>
+            </div>
+          </div>
+        </div>
+        <form action="" method="post" class="search-form">
+          <input
+            type="text"
+            name="searchGlobal"
+            value=""
+            placeholder="Rechercher"
+            maxlength="100"
+          />
+          <button
+            type="submit"
+            name="globalRecherche"
+            class="fas fa-search"
+          ></button>
+        </form>
+      </div>
+      <!-- FLEX-RIGHT -->
+      <div class="flex-right">
+        <div class="date">
+          <input type="date" id="choisir_date" name="date" />
+        </div>
+        <div class="logo">
+          <img src="/assets/img/profile.jpeg" class="image" alt="" />
+          <div class="info">
+            <p>Seydina Mouhammad Diop</p>
+            <small id="user-btn">
+              Admin <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile">
+        <a href="profile.html" class="btn">Voir profile</a>
+        <div class="flex-btn">
+          <form action="" method="post">
+            <button type="submit" class="option-btn" name="deconnexion">
+              <i class="fa fa-power-off" aria-hidden="true"></i> Se déconnecter
+            </button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <!-- side-bar -->
+    <div class="side-bar">
+      <div class="logo">
+        <img src="/assets/img/Logo-Sonatel-Academy.png" class="image" alt="" />
+        <h3 class="menu">- MENU</h3>
+      </div>
+      <nav class="navbar">
+        <a href="#"
+          ><i class="fa fa-align-right" aria-hidden="true"></i
+          ><span>Dashboard</span></a
+        >
+        <a href="#"
+          ><i class="fa fa-graduation-cap" aria-hidden="true"></i
+          ><span>Apprenants</span></a
+        >
+        <a href="#"
+          ><i class="fa fa-list-alt" aria-hidden="true"></i>
+          <span>Promos</span></a
+        >
+        <a href="#"
+          ><i class="fa fa-calendar-plus-o" aria-hidden="true"></i
+          ><span>Référentiels</span></a
+        >
+        <a href="#"
+          ><i class="fa fa-user-circle-o" aria-hidden="true"></i
+          ><span>Utilisateurs</span></a
+        >
+        <a href="#"
+          ><i class="fa fa-user-circle-o" aria-hidden="true"></i
+          ><span>Visiteurs</span></a
+        >
+        <a href="#"
+          ><i class="fa fa-user-circle-o" aria-hidden="true"></i
+          ><span>Presences</span></a
+        >
+        <a href="#"
+          ><i class="fa fa-calendar-plus-o" aria-hidden="true"></i
+          ><span>Événements</span></a
+        >
+      </nav>
+    </div>
+    <section class="home-section">
+      <div class="title">
+        <div class="left">Apprenants</div>
+        <div class="right">Promos * Liste * Détails - Apprenants</div>
+      </div>
+      <div class="conteneur">
+        <div class="contain1">
+          <span>Promotion :</span>
+          <span> promotion 6 </span>
+        </div>
+        <div class="contain2">
+          <span>Référentiels :</span>&ensp;
+          <form action="" method="post">
+            <div class="custom-select">
+              <input
+                hidden
+                type="checkbox"
+                name="referentiel"
+                value="1"
+                id="referentiel"
+              />
+              <label
+                for="referentiel"
+                class="select-selected dropdown"
+                onclick="toggleSelectItems()"
+                >Référentiels</label
+              >
+              <div class="select-items" id="selectItems">
+                <div>
+                  <input
+                    type="checkbox"
+                    name="referentielPromo[]"
+                    id="libellle"
+                    value="libelle"
+                  />
+                  <label for="libelle">libelle</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    name="referentielPromo[]"
+                    id="libellle"
+                    value="libelle"
+                  />
+                  <label for="libelle">libelle</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    name="referentielPromo[]"
+                    id="libellle"
+                    value="libelle"
+                  />
+                  <label for="libelle">libelle</label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="content">
+        <div class="container">
+          <div class="flex-col-left"></div>
+          <div class="flex-col-right">
+            <div class="line2">
+              <div class="div1">Liste Des Apprenants <span>(10)</span></div>
+              <div class="buttons">
+                <button
+                  class="btn-hover color-5"
+                  onclick="window.location.href='#popup'"
+                >
+                  + Nouveau
+                </button>
+                <button
+                  class="btn-hover color-2"
+                  onclick="window.location.href='#popupFILE'"
+                >
+                  Insertion en masse
+                </button>
+                <button class="btn-hover color-1">
+                  <i class="fa-solid fa-download"></i> Fichiermodèle
+                </button>
+                <button class="btn-hover color-9">Liste des Exclus</button>
+              </div>
+            </div>
+            <div class="line3">
+              <span><i class="fa-solid fa-magnifying-glass"></i></span>
+              <form action="" method="post">
+                <input
+                  type="text"
+                  placeholder="Filtrer"
+                  name="search"
+                  value=""
+                  onchange="this.forms.submit()"
+                />
+              </form>
+            </div>
+
+            <div class="line4">
+              <img src="assets/img/image.png" width="5%" height="5%" />
+            </div>
+
+            <div class="container-table">
+              <table class="line5">
+                <thead>
+                  <tr>
+                    <th class="titre" data-label="Image">Image</th>
+                    <th class="titre" data-label="Nom">Nom</th>
+                    <th class="titre prenom" data-label="Prenom">Prenom</th>
+                    <th class="titre email1" data-label="Email">Email</th>
+                    <th class="titre" data-label="Genre">Genre</th>
+                    <th class="titre" data-label="Telephones">Telephones</th>
+                    <th class="titre" data-label="Telephones">Réferentiels</th>
+                    <th class="titre" data-label="Actions">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="line">
+                    <td class="bloc">
+                      <div class="col-bas">
+                        <img src="assets/img/icone.png" width="30px" />
+                      </div>
+                    </td>
+                    <td class="bloc">
+                      <div class="col-bas" style="color: rgb(29, 109, 29)">
+                        sow
+                      </div>
+                    </td>
+                    <td class="bloc">
+                      <div class="col-bas" style="color: rgb(29, 109, 29)">
+                        bobo
+                      </div>
+                    </td>
+                    <td class="bloc">
+                      <div class="col-bas email">s@g.com</div>
+                    </td>
+                    <td class="bloc">
+                      <div class="col-bas">M</div>
+                    </td>
+                    <td class="bloc">
+                      <div class="col-bas">770552626</div>
+                    </td>
+                    <td class="bloc">
+                      <div class="col-bas">DEV</div>
+                    </td>
+                    <td class="bloc">
+                      <div class="col-haut"></div>
+                      <input type="checkbox" id="my-checkbox-0" />
+                      <label for="my-checkbox-0"></label>
+                    </td>
+                  </tr>
+
+                  <tr class="line">
+                    <td class="bloc">
+                      <div class="col-bas">
+                        <img src="assets/img/icone.png" width="30px" />
+                      </div>
+                    </td>
+                    <td class="bloc">
+                      <div class="col-bas" style="color: rgb(29, 109, 29)">
+                        sow
+                      </div>
+                    </td>
+                    <td class="bloc">
+                      <div class="col-bas" style="color: rgb(29, 109, 29)">
+                        bobo
+                      </div>
+                    </td>
+                    <td class="bloc">
+                      <div class="col-bas email">s@g.com</div>
+                    </td>
+                    <td class="bloc">
+                      <div class="col-bas">M</div>
+                    </td>
+                    <td class="bloc">
+                      <div class="col-bas">770552626</div>
+                    </td>
+                    <td class="bloc">
+                      <div class="col-bas">DEV</div>
+                    </td>
+                    <td class="bloc">
+                      <div class="col-haut"></div>
+                      <input type="checkbox" id="my-checkbox-0" />
+                      <label for="my-checkbox-0"></label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="footer-table">
+                <div class="items-per-page">
+                  <label>Items par page : </label>
+                  <a href="mypage.php?itemsPerPage=10">10</a>
+                  <a href="mypage.php?itemsPerPage=20">20</a>
+                  <a href="mypage.php?itemsPerPage=30">30</a>
+                </div>
+                <div class="pagination">
+                  <a href="#" class="page-link prev"
+                    ><i class="fas fa-angle-left"></i
+                  ></a>
+                  <a href="#" class="page-link active">0</a>
+                  <a href="#" class="page-link">1</a>
+                  <a href="#" class="page-link">2</a>
+                  <a href="#" class="page-link next"
+                    ><i class="fas fa-angle-right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">&copy; Sonatel Academy</footer>
+    </section>
+   
+    <div class="fixed-icon">
+      <i class="fa-solid fa-gear"></i>
+    </div>
+
+    <div id="popup" class="modal">
+        <input type="checkbox" id="popup_checkbox">
+        <form action="" method="post" class="modal-content">
+            <div class="head">
+                <a href="#" class="close">×</a>
+                <h1>Nouvel Apprenant</h1>
+            </div>
+            <div class="section informations-perso">
+    
+                <div class="stutdent">
+                    <div class="line flex">
+                        <span><i class="fa-solid fa-1"></i></span>
+                        <span>Informations Perso.</span>
+                        <span></span>
+                        <span><i class="fa-solid fa-2" style="color: #038e89;background: #f2f1ff"></i></span>
+                        <span>Informations Supplémentaires</span>
+                    </div>
+                    <div class="input-group">
+                        <div class="stutdent-image">
+                            <div class="file">
+                                <input type="file" id="fileInput" name="imageReferentiel"
+                                       onchange="previewImage(event)" />
+                                <div class="error" style="font-size: 1em"></div>
+                            </div>
+                            <div class="img">
+                                <img id="studentImage" src="/assets/img/profile.jpeg" alt="Image">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="nom">Nom</label>
+                            <input type="text" id="nom" placeholder="Entrer le nom" required>
+                        </div>
+                        <div>
+                            <label for="prenom">Prénom</label>
+                            <input type="text" id="prenom" placeholder="Entrer le prénom" required>
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Entrer l'email" required>
+                        </div>
+                        <div>
+                            <label for="telephone">Telephone</label>
+                            <input type="text" id="telephone" placeholder="Entrer le telephone" required>
+                        </div>
+                        <div>
+                            <label for="sexe">Sexe</label>
+                            <select name="sexe" id="sexe">
+                                <option value="masculin">Masculin</option>
+                                <option value="feminin">Feminin</option>
+                            </select>
+                        </div>
+                        <div class="date-input-container">
+                            <label for="dateNaissance">Date de Naissance</label>
+                            <input type="date" name="dateNaissance" id="dateNaissance">
+                        </div>
+                        <div>
+                            <label for="lieu_naissance">Lieu de Naissance</label>
+                            <input type="text" id="lieu_naissance" placeholder="Entrer le lieu de naissance"
+                                   required>
+                        </div>
+                        <div>
+                            <label for="cni">N° CNI</label>
+                            <input type="text" id="cni"
+                                   placeholder="Entrer le numero de votre carte d'identité" required>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="tuteur">
+                    <div class="line flex">
+                        <span><i class="fa-solid fa-pencil"></i></span>
+                        <span>Informations Perso.</span>
+                        <span></span>
+                        <span><i class="fa-solid fa-2" style="color: white;background: var(--main-color)"></i></span>
+                        <span>Informations Supplémentaires</span>
+                    </div>
+                    <div class="input-group">
+                        <div>
+                            <label for="nom_prenon_tuteur">Nom & Prénom du tuteur</label>
+                            <input type="text" id="nom_prenon_tuteur"
+                                   placeholder="Entrer le nom et le prénom du tuteur" required>
+                        </div>
+                        <div>
+                            <label for="contact">Contact Tuteur</label>
+                            <input type="text" id="contact" placeholder="Entrer le contact du tuteur" required>
+                        </div>
+                        <div>
+                            <label for="photocopie_cni">Photocopie CNI</label>
+                            <input type="file" id="photocopie_cni" placeholder="Photocopie CNI" required>
+                        </div>
+                        <div>
+                            <label for="extrait_naissance">Extrait de naissance</label>
+                            <input type="file" id="extrait_naissance" placeholder="Extrait de naissance" required>
+                        </div>
+                        <div>
+                            <label for="diplome">Diplôme</label>
+                            <input type="file" id="diplome" placeholder="Diplôme">
+                        </div>
+                        <div>
+                            <label for="casier_judiciaire">Casier Judiciaire</label>
+                            <input type="file" id="casier_judiciaire" placeholder="Casier Judiciaire" required>
+                        </div>
+                        <div>
+                            <label for="visite_medicale">Visite Médicale</label>
+                            <input type="file" id="visite_medicale" placeholder="Visite Médicale" required>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="btn-container">
+                            <button type="reset" class="btn-hover cancel">X Annuler</button>
+                            <button type="submit" class="btn-hover submit">+ Créer nouvel apprenant</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <label for="popup_checkbox" class="btn-checkbox-container">
+                        <div class="btn-checkbox next"><i class="fa-solid fa-circle-arrow-right"></i> Suivant </div>
+                        <div class="btn-checkbox prev"><i class="fa-solid fa-circle-arrow-left"></i> Précédent </div>
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    
+    
+    
+    <div class="excel" id="popupFILE">
+        <div class="popup">
+            <div class="popup-header">Choisir un Fichier Excel</div>
+            <div class="upload">
+                <div class="chose-file"><input type="file" class="hidden-input" id="fileInput" accept=".xlsx, .xls, .ods"
+                                               hidden>
+                    <label for="fileInput" class="drop-zone">
+                        <span class="drop-zone-text">Drop file here or click to upload</span>
+                    </label></div>
+            </div>
+            <div class="footer-btns">
+                <a href="#" class="btn btn-red">Fermer</a>
+                <button type="submit" form="formExcel" class="btn btn-green">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+  </body>
+  <script src="assets/js/main.js"></script>
+  <script>
+    function toggleSelectItems() {
+      var selectItems = document.getElementById("selectItems");
+      if (selectItems.style.display === "none") {
+        selectItems.style.display = "block";
+        localStorage.setItem("referentiel", true);
+      } else {
+        selectItems.style.display = "none";
+        localStorage.setItem("referentiel", false);
+      }
+    }
+
+    // Vérifier l'état du div contenant les select-items au chargement de la page
+    if (localStorage.getItem("referentiel") === "true") {
+      selectItems.style.display = "block";
+      selectItems.checked = true;
+    } else {
+      selectItems.style.display = "none";
+      selectItems.checked = false;
+    }
+  </script>
+</html>

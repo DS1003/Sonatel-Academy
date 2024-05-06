@@ -31,10 +31,10 @@
         }
 
         .todo {
-            width: 70%;
+            width: 50%;
             height: 80%;
             padding: 1rem;
-            background-color: #f4cf14;
+            background-color: #f4cf1483;
             border-radius: 1rem;
             display: flex;
             flex-direction: row;
@@ -46,7 +46,7 @@
 
         .right,
         .left {
-            width: 50%;
+            width: 70%;
             height: 100%;
             border-radius: 1rem;
             display: flex;
@@ -54,7 +54,7 @@
             align-items: center;
             padding: 1rem;
             gap: 1rem;
-            background-color: #f4cf14;
+            background-color: #f4cf14ee;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
 
@@ -81,7 +81,7 @@
         }
 
         .addtodo>input {
-            width: 25%;
+            width: 30%;
             height: 60%;
             color: #56776c;
             border: none;
@@ -157,7 +157,15 @@
     <div class="todo">
         <div class="right">
             <h2>To do : </h2>
+            <div class="sort">
+                <label for="sortSelect">Filtre: </label>
+                <select id="sortSelect">
+                    <option value="asc">Ascendant</option>
+                    <option value="desc">Descendant</option>
+                </select>
+            </div>
             <div class="list">
+
                 <div class="have-todo">
                     <!-- -------------------- liste des todos -------------------------  -->
                 </div>
@@ -167,7 +175,7 @@
                 <button class="addbtn" id="addBtn" type="submit">Add</button>
                 <button class="delbtn" id="delbtn" type="submit">Delete</button>
                 <label for="">Chose date</label>
-                <input id="" type="date">
+                <input id="todoDate" type="date">
             </div>
         </div>
     </div>
@@ -189,6 +197,8 @@
     </div>
 
     <script>
+
+
         // Récupérez le modal
         let modal = document.getElementById("modal");
 
@@ -282,6 +292,9 @@
 
                 // Fermer le modal
                 modal.style.display = "none";
+                // Effacer le champ de texte du modal
+                document.getElementById("todoDescription").value = "";
+                document.getElementById("todoTime").value = "";
             }
         }
 
@@ -307,7 +320,25 @@
         // Récupérez le bouton "Delete"
         let deleteBtn = document.querySelector(".delbtn");
 
-        // Associez un gestionnaire d'événement au clic sur le bouton "Delete"
+        /*  // Associez un gestionnaire d'événement au clic sur le bouton "Delete"
+         deleteBtn.onclick = function () {
+             // Récupérez tous les éléments de la liste de tâches
+             let todos = document.querySelectorAll('.have-todo');
+ 
+             // Parcourez tous les éléments de la liste
+             todos.forEach(todo => {
+                 // Récupérez la case à cocher à l'intérieur de cet élément
+                 let checkbox = todo.querySelector('#check');
+ 
+                 // Vérifiez si la case à cocher est cochée
+                 if (checkbox.checked) {
+                     // Supprimez l'élément de la liste
+                     todo.remove();
+                 }
+             });
+         } */
+
+        // supprimer les checkboxes de la liste des checkboxes checked
         deleteBtn.onclick = function () {
             // Récupérez tous les éléments de la liste de tâches
             let todos = document.querySelectorAll('.have-todo');
@@ -324,6 +355,59 @@
                 }
             });
         }
+
+
+        // Récupérez l'élément de sélection
+        let sortSelect = document.getElementById("sortSelect");
+
+        // Associez un gestionnaire d'événements au changement de sélection
+        sortSelect.onchange = function () {
+            let selectedOption = sortSelect.value;
+            sortTodoList(selectedOption);
+        };
+
+        
+        let todoDateInput = document.getElementById("todoDate");
+
+        //obtenir la date d'aujourd'hui
+        let today = new Date().toISOString().slice(0, 10);
+        todoDateInput.setAttribute("value", today);
+
+
+
+        // Fonction pour trier les éléments de la liste de tâches par heure
+        function sortTodoList(order) {
+            // Récupérez tous les éléments de la liste de tâches
+            let todos = document.querySelectorAll('.have-todo');
+
+            // Convertissez la NodeList en un tableau pour pouvoir utiliser sort()
+            let todoArray = Array.from(todos);
+
+            // Trier le tableau en fonction de l'heure de la tâche
+            todoArray.sort((a, b) => {
+                let timeA = a.querySelector('span').textContent;
+                let timeB = b.querySelector('span').textContent;
+
+                // Convertissez les heures en objet Date pour les comparer
+                let dateA = new Date(`2000-01-01T${timeA}`);
+                let dateB = new Date(`2000-01-01T${timeB}`);
+
+                if (order === "asc") {
+                    return dateA - dateB;
+                } else if (order === "desc") {
+                    return dateB - dateA;
+                }
+            });
+
+            // Vider la liste actuelle
+            todoList.innerHTML = "";
+
+            // Ajouter les éléments triés à la liste
+            todoArray.forEach(todo => {
+                todoList.appendChild(todo);
+            });
+        }
+
     </script>
 </body>
 

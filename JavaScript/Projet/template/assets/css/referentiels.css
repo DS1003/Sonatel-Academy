@@ -1,0 +1,346 @@
+.content{
+    width: 100%;
+    display: flex;
+    align-items: self-start;
+    flex-direction: row;
+    background-color: var(--light-bg);
+}
+.display-content{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.cards {
+    flex-basis: 98%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 2rem;
+    color: var(--black);
+ 
+}
+
+.container-card {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    text-align: center;
+    width: 253px;
+    height: 35rem;
+    filter: drop-shadow(0 0 2px var(--light-color));
+    transition: transform 0.3s ease; /* ajout pour un effet au survol */
+}
+
+
+.container-card::before {
+    content:'...';
+    font-size: 3em;
+    position: absolute;
+    top: 0;
+   
+}
+
+.container-card:hover {
+    transform: translateY(-10px); /* effet de déplacement vers le haut au survol */
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.banner-image {
+    position: relative;
+    height: 110px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.255);
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10%;
+}
+
+.banner-image img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    transition: transform .3s ease, box-shadow .3s ease; /* uniformiser les transitions */
+}
+
+.banner-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+}
+
+.container-card .wrapper p {
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.6; /* ajustement pour améliorer la lisibilité */
+    padding: 10px 0; /* ajout de padding */
+}
+
+.container-card .wrapper .promotion, .container-card .wrapper .referentiel {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 0.5px; /* légère augmentation de l'espacement entre les caractères */
+}
+
+.container-card .wrapper .date {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+
+.btn-hover.desactiver {
+    background-image: linear-gradient(to right, #eb3941, #f15e64, #e14e53, #e2373f);  box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
+}
+
+.btn-hover.activer {
+    background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+
+/* CARD DISPLAY FORM  */
+
+.display-form {
+    flex: 35%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 45em;
+    background-color: var(--white);
+    color: var(--black);
+    font-weight: bold;
+    filter: drop-shadow(0 8px 8px rgba(103, 100, 100, .7));
+    color: var(--black);
+}
+
+
+.display-form h1{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+
+}
+.display-form .content {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+    }
+
+.input-wrapper label {
+    margin-bottom: 5px;
+    font-size:1.5rem;
+}
+
+.input-wrapper i {
+    position: absolute;
+    top: 55%;
+    left: 25px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: var(--black);
+}
+
+.form-new input[type="text"],
+.form-new textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 5px 0 5px 45px;
+    background-color: var(--light-bg);
+}
+
+.form-new button {
+    align-self: center;
+}
+
+.form-new input[type="text"]::placeholder,
+.form-new textarea::placeholder {
+    color: var(--black);
+    font-style: italic;
+}
+
+
+.flex-row{
+    display: flex;
+}
+
+.flex-row .img{
+    width: 10em; /* ou une largeur fixe de votre choix */
+    height: auto; /* pour conserver le ratio de l'image */
+    overflow: hidden; /* pour masquer les parties de l'image qui dépassent du div */
+    border-radius: 1em;
+}
+
+.img img {
+    width: 100%; /* pour que l'image prenne toute la largeur du div */
+    height: auto; /* pour conserver le ratio de l'image */
+}
+
+.flex-row input[type=file] {
+    color: #222245;
+    padding: 8px 10px;
+    background-color: var(--light-bg);
+   width: 95%;
+}
+
+.flex-row input[type=file]::file-selector-button {
+    margin-right: 8px;
+    border: none;
+    background: var(--light-color);
+    padding: 8px 12px;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.flex-row input[type=file]::file-selector-button:hover {
+    background: var(--main-color);
+}
+
+.flex-rowinput[type=file] {
+    width: 350px;
+    max-width: 100%;
+}
+
+.checkbox-wrapper-2 .ikxBAC {
+    appearance: none;
+    background-color: #dfe1e4;
+    border-radius: 70px;
+    border-style: none;
+    flex-shrink: 0;
+    height: 34px; /* Augmentation de la taille en hauteur */
+    margin: 0;
+    position: relative;
+    width: 60px; /* Augmentation de la taille en largeur */
+}
+
+.checkbox-wrapper-2 .ikxBAC::before {
+    bottom: -6px;
+    content: "";
+    left: -6px;
+    position: absolute;
+    right: -6px;
+    top: -6px;
+}
+
+.checkbox-wrapper-2 .ikxBAC,
+.checkbox-wrapper-2 .ikxBAC::after {
+    transition: all 100ms ease-out;
+}
+
+.checkbox-wrapper-2 .ikxBAC::after {
+    background-color: #fff;
+    border-radius: 50%;
+    content: "";
+    height: 31px; /* Ajustement de la taille de la coche */
+    left: 1px; /* Positionnement de la coche */
+    position: absolute;
+    top: 1px; /* Positionnement de la coche */
+    width: 30px; /* Ajustement de la taille de la coche */
+}
+
+.checkbox-wrapper-2 input[type=checkbox] {
+    cursor: default;
+}
+
+.checkbox-wrapper-2 .ikxBAC:hover {
+    background-color: #c9cbcd;
+    transition-duration: 0s;
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked {
+    background-color: var(--main-color);
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked::after {
+    background-color: #fff;
+    left: 29px; /* Ajustement de la position de la coche */
+}
+
+.checkbox-wrapper-2 :focus:not(.focus-visible) {
+    outline: 0;
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked:hover {
+    background-color: #47e874;
+}
+
+.first {
+    color: var(--red);
+    font-size: 1.5em;
+}
+
+/* Media Queries pour les tablettes */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .display-content {
+        flex-direction: column;
+        width: 100%; /* Adaptation à la largeur totale */
+    }
+
+    .cards {
+        flex-basis: 100%; /* Les cartes prennent toute la largeur */
+    }
+
+    .container-card {
+        width: 100%; /* Cartes étendues à toute la largeur */
+        padding: 30px 10px; /* Padding ajusté pour les tablettes */
+    }
+}
+
+/* Media Queries pour les téléphones mobiles */
+@media (max-width: 480px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .display-content {
+        flex-direction: column;
+        width: 100%; /* Pleine largeur pour faciliter la lecture sur les petits écrans */
+    }
+
+    .cards {
+        flex-direction: column;
+        gap: 1rem; /* Espacement réduit entre les cartes pour économiser de l'espace */
+    }
+
+    .container-card {
+        width: 100%; /* Pleine largeur pour une meilleure visualisation sur les mobiles */
+        padding: 20px 5px; /* Réduction du padding pour maximiser l'espace disponible */
+    }
+
+    .container-card .wrapper .promotion, .container-card .wrapper .referentiel {
+        font-size: 1.5rem; /* Taille de police réduite pour une meilleure adaptation */
+    }
+
+    .container-card .wrapper .date {
+        font-size: 0.8rem; /* Taille de police réduite pour les dates */
+    }
+}

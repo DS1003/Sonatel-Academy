@@ -1,0 +1,254 @@
+
+
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contain1, .contain2 {
+        margin-bottom: 10px;
+    }
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+.container {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+    padding: 40px 30px;
+    color: var(--black);
+  background-color: var(--white);
+}
+
+
+
+.flex-col-right {
+    flex: 1;
+
+}
+
+.btn-hover.nouvelle {
+    background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+    color: var(--white);
+}
+
+
+.div1 span {
+    color: #038f85;
+}
+
+.line2 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1%;
+    display: flex;
+    align-items: center;
+
+}
+.line2 .div1 {
+    width: 15%;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.line2 .div2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.line2  .search-form {
+    width: 30rem;
+    border-radius: 1rem;
+    background-color: var(--light-bg);
+    padding: 1rem 1.5rem;
+    display: flex;
+    margin-right: 1.5rem;
+}
+
+.line2  .search-form input {
+    width: 100%;
+    font-size: 1.8rem;
+    color: var(--black);
+    background: none;
+}
+
+.line2  .search-form button {
+    background: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--main-color);
+}
+
+.line2  .search-form button:hover {
+    color: var(--main-color);
+}
+
+
+
+
+
+@media screen and (max-width: 500px) {
+    .barrevertical {
+        z-index: -1;
+    }
+    .line1 {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 2vh;
+    }
+    h3 {
+        position: absolute;
+        left: 65%;
+        top: 3%;
+    }
+    .col-bas {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .line2 {
+        display: block;
+        margin: 2%;
+    }
+    .div1{
+        white-space: nowrap;
+        margin-bottom: 2vh;
+    }
+    .line3 input {
+        padding-left: 10%;
+    }
+    .line3 span {
+        position: absolute;
+        left: .5vw;
+        top: 1.5vh;
+    }
+  
+    .line-titre {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    .bloc div {
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+    .col-haut {
+        background-color: rgb(153, 224, 221);
+        display: none;
+        opacity: 1;
+        margin-bottom: 10%;
+        border-radius: 15px;
+    }
+
+    .bloc {
+        flex-direction: column;
+    }
+}
+
+
+/* Styles pour les écrans de taille moyenne (500px à 1000px) */
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+    .barrevertical {
+        z-index: -1;
+    }
+    .line1 {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 2vh;
+    }
+    .line1 span {
+        margin-right: 8%;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .line2 {
+        display: block;
+        margin: 2%;
+    }
+    .div1{
+        white-space: nowrap;
+        margin-bottom: 2vh;
+    }
+    h3 {
+        position: absolute;
+        left: 65%;
+        top: 3%;
+    }
+    .line3 {
+        position: relative;
+        opacity: .5;
+    }
+    .line3 input {
+        width: 100%;
+        height: 5vh;
+        padding-left: 6%;
+        border-radius: 10px;
+        margin-bottom: 2%;
+    }
+    .line3 span {
+        position: absolute;
+        left: .5vw;
+        top: 1.5vh;
+    }
+   
+    .line-titre {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    .bloc div {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .col-haut {
+        background-color: rgb(153, 224, 221);
+        display: none;
+        opacity: 1;
+        margin-bottom: 10%;
+        border-radius: 15px;
+    }
+    .line5 .line {
+        flex-direction: column;
+        border: 1px solid black;
+        border-radius: 15px;
+        box-shadow: 1px 1px 6px gray;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .bloc {
+        flex-direction: column;
+    }
+}
+
+
+
+@media screen and (min-width:1001px) {
+    .container {
+        width: 80%;
+    }
+}
+
+

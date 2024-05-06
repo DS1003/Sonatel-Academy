@@ -1,0 +1,371 @@
+/* Styles uniformisés */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cover {
+    width: 67%;
+    height: 80vh;
+    background-color: transparent transparent;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+.container {
+    padding: 1rem;
+    width: 80%;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffd000b6;
+    border-radius: 1rem;
+}
+
+.taskList {
+    border: 1px solid white;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.13);
+    padding: 2cqmax;
+    border-radius: .5rem;
+    margin: 1rem;
+    max-height: 300px;
+}
+.task {
+    width: 80%;
+    max-width: 700px;
+    background-color: #56776c93;
+    border-radius: 10px;
+    height: 10% !important;
+    padding: 20px;
+    color: #003939;
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    select {
+        border: none;
+        background-color: #56776c9a;
+        height: 2rem;
+        width: 30%;
+        font-size: 1em;
+        margin-left: 15px;
+        border-radius: .5rem;
+    }
+}
+
+
+.task-header  , .task-date {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    
+}
+
+.task-date {
+    margin-left: 20px;
+    font-weight: large;
+    color:#000000;
+    text-align: center;
+    font-size: 1.1em;
+    
+}
+
+.task-content {
+    font-size: 1.2em;
+    max-width: 80%;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #fff; /* Couleur de départ */
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    animation: fadeIn 1s ease infinite alternate;
+}
+
+h1:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    margin-top: 10px;
+    animation: fadeIn 1s ease;
+}
+
+.container1 {
+    width: 80%;
+    max-width: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    gap: 1rem;
+}
+
+#allTask {
+    
+}
+
+.container1 div {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    
+    div {
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.container1 div:hover {
+    background-color: #005b5b;
+}
+
+.del, .add {
+    height: 3.2rem;
+}
+
+.del,
+.add,
+.addDate {
+    background-color: #003939;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    
+}
+
+.del i,
+.add i,
+.addDate i {
+    margin-right: 5px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    color: #005b5b;
+    height: 30px;
+    width: 30px;
+}
+
+
+.list {
+    margin-top: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #fff;
+    opacity: 0.8;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #003939;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+hr {
+    width: 80%;
+    max-width: 700px;
+    border: none;
+    border-top: 1px solid #003939;
+    margin: 20px 0;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.completed .task-content {
+    text-decoration: line-through;
+    color: red;
+    height: 30px;
+  }
+  
+
+/* Styles personnalisés pour le champ de date */
+.custom-date-input {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-date-input input[type="date"] {
+    appearance: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #007171;
+    width: 200px;
+    color: #fff;
+}
+
+.custom-date-input  input[type="date"]::-webkit-calendar-picker-indicator {
+    color: #007171;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.custom-date-input input[type="date"]:focus {
+    outline: none;
+    border-color: #007171;
+    box-shadow: 0 0 5px rgba(0, 113, 113, 0.5);
+}
+
+/* Styles du modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre */
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style du champ de l'heure */
+#timeInput {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style des boutons */
+#addTaskBtn {
+    background-color: #007171;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Ajout d'une transition */
+}
+
+#addTaskBtn:hover {
+    background-color: #005b5b;
+}
+
+/* Style des messages d'erreur */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+#taskError ,
+#timeError {
+    color: red;
+    font-size: 14px;
+    display: block;
+}
+
+#delBtn {
+    background-color: #56776c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Ajout d'une transition */
+}
+
+#delBtn:hover {
+    background-color: #f5000080;
+}
+
+.add {
+    background-color: #56776c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; 
+}
+
+.add:hover {
+    background-color: #1df500c5 !important;
+}
+
+.addDate {
+    background-color: #56776c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    width: 50%;
+    margin: 0 !important;
+}
+.custom-date-input {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 0 !important;
+}
