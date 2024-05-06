@@ -102,6 +102,23 @@ function addTask() {
   // Obtenir la date sélectionnée
   const selectedDate = dateInput.value;
 
+  //verifier si la date sélectionné est ultérieur à la date sélectionnée
+  if (selectedDate < dateInput.value) {
+    alert("La date sélectionnée est antérieure à la date actuelle");
+    return;
+  }
+
+  // Vérifier si la tâche existe déjà pour la date sélectionnée
+  var tasks = getTasksFromLocalStorage() || [];
+  var existingTask = tasks.find(task => task.date === selectedDate && task.content === taskInput);
+  if (existingTask) {
+    alert("Cette tâche existe déjà pour la date sélectionnée");
+    return;
+  }
+
+  // Vérifier si la tâche existe déjà pour la date sélectionnée
+  var tasks = getTasksFromLocalStorage() || [];
+  var existingTask = tasks.find(task => task.date === selectedDate && task.content === taskInput);
   // Créer un objet représentant la nouvelle tâche
   var newTask = {
     content: taskInput,
