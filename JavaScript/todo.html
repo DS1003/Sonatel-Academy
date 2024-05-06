@@ -16,59 +16,37 @@
 
         body {
             background-color: #f5fcff;
-            /*             background-image: url(/JavaScript/img/manga-one-piece-wallpaper-preview.jpg);
- */
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            /* backdrop-filter: blur(0); */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-
-            h1 {
-                font-size: 3rem;
-                font-weight: 800;
-                margin-bottom: 1rem;
-            }
+            min-height: 100vh;
         }
 
-        body>h1 {
-            color: #56776c;
+        h1 {
+            font-size: 3rem;
             font-weight: 800;
+            margin-bottom: 1rem;
+            color: #56776c;
         }
 
         .todo {
             width: 70%;
             height: 80%;
             padding: 1rem;
-            background-color: #f4cf1438;
+            background-color: #f4cf14;
             border-radius: 1rem;
-            /* box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); */
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
             gap: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        .right,
         .left {
-            width: 40%;
-            height: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            padding: 1rem;
-            gap: 1rem;
-            flex-wrap: wrap;
-            border-radius: 1rem;
-            background-color: #f4cf1448;
-        }
-
-        .right {
-            width: 100%;
+            width: 50%;
             height: 100%;
             border-radius: 1rem;
             display: flex;
@@ -76,94 +54,35 @@
             align-items: center;
             padding: 1rem;
             gap: 1rem;
-            border-radius: 1rem;
-            background-color: #f4cf1448;
-        }
-
-        .ready {
-            width: 47%;
-            height: 30%;
-            border-radius: 1rem;
-            background-color: #f4cf14ec;
-            display: flex;
-            flex-direction: column;
-            color: #56776c;
-            font-size: 3rem;
-            justify-content: center;
-            align-items: center;
-
-            h1 {
-                font-weight: 800;
-                font-size: 2rem;
-            }
-        }
-
-        .notyet {
-            width: 47%;
-            height: 30%;
-            border-radius: 1rem;
-            background-color: #56776c;
-            display: flex;
-            flex-direction: column;
-            color: white !important;
-            font-size: 3rem;
-            justify-content: center;
-            align-items: center;
-
-            h1 {
-                font-weight: 800;
-                font-size: 2rem;
-            }
+            background-color: #f4cf14;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
 
         .addtodo {
             width: 100%;
-
             height: 15%;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid #f4cf14;
             gap: 1rem;
-        }
-
-        /* #check {
-            width: 1.5rem;
-            height: 2rem;
-            background-color: #56776c;
-            display: flex;
-            align-self: center;
-        } */
-        #description {
-            width: 70%;
-            height: 60%;
-            border: 1px solid #56776c;
-            background-color: rgba(255, 255, 255, 0.466);
-            border-radius: .5rem;
-            padding: 1rem;
-            color: #56776c;
-            font-size: 1rem;
-            font-weight: 500;
-
         }
 
         .addtodo>button {
             width: 20%;
             height: 60%;
-            background-color: #f4cf14;
-            color: #56776c;
+            background-color: #56776c;
+            color: white;
             border: none;
             border-radius: .5rem;
             font-size: 1.3rem;
             font-weight: 800;
             cursor: pointer;
-            box-shadow: currentColor 1 0 0 0 1;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
 
         .addtodo>input {
             width: 25%;
             height: 60%;
-
             color: #56776c;
             border: none;
             border-radius: .5rem;
@@ -171,96 +90,56 @@
             font-weight: 800;
             padding: 1rem;
             cursor: pointer;
-            box-shadow: currentColor 1 0 0 0 1;
-        }
-
-        label {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: #56776c;
-            cursor: pointer;
-            box-shadow: currentColor 1 0 0 0 1;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
 
         .list {
             border: 1px solid #56776c;
             width: 100%;
             height: max-content;
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 1rem;
-            flex-direction: row;
-            overflow: scroll;
+            flex-direction: column;
+            overflow: auto;
         }
 
-        .list>#check {
-            width: 2rem;
-            height: 2rem;
-            background-color: #56776c;
-            display: flex;
-            align-self: center;
-        }
-
-        /* Ajoutez le style pour le modal */
         .modal {
             display: none;
-            /* Par défaut, le modal est caché */
             position: fixed;
-            /* Position fixée pour rester au-dessus du contenu */
             z-index: 1;
-            /* Assure que le modal est au-dessus du reste du contenu */
             left: 0;
             top: 0;
             width: 100%;
-            /* Pleine largeur */
             height: 100%;
-            /* Pleine hauteur */
             overflow: auto;
-            /* Ajoute un défilement si nécessaire */
             background-color: rgba(0, 0, 0, 0.5);
-            /* Couleur de fond sombre avec transparence */
             padding-top: 100px;
-            /* Ajoutez un peu de marge en haut pour le contenu */
         }
 
         .modal-content {
             background-color: #fefefe;
             margin: auto;
-            /* Centrez le modal sur l'écran */
             padding: 20px;
             border: 1px solid #888;
             width: 30%;
-            /* Ajustez la largeur du modal si nécessaire */
             border-radius: 10px;
             display: flex;
             gap: .7rem;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
-            input {
-                width: 90%;
-                height: 3rem;
-                border: 1px solid #56776c;
-                background-color: rgba(255, 255, 255, 0.466);
-                border-radius: .5rem;
-                padding: 1rem;
-                color: #56776c;
-                font-size: 1rem;
-                font-weight: 500;
-            }
         }
 
-        /* Ajoutez un bouton de fermeture pour le modal */
         .close {
             color: #aaaaaa;
             float: right;
             font-size: 28px;
             font-weight: bold;
             position: absolute;
-            top: 20%;
+            top: 20px;
+            right: 20px;
         }
 
         .close:hover,
@@ -280,14 +159,13 @@
             <h2>To do : </h2>
             <div class="list">
                 <div class="have-todo">
-                    <input id="check" type="checkbox">
-                    <input id="description" type="text" style="" placeholder="Faire mes TD de JS !!!">
+                    <!-- -------------------- liste des todos -------------------------  -->
                 </div>
             </div>
             <div class="addtodo">
                 <!-- Ajoutez un ID au bouton "Ajouter" -->
                 <button class="addbtn" id="addBtn" type="submit">Add</button>
-                <button class="delbtn">Delete</button>
+                <button class="delbtn" id="delbtn" type="submit">Delete</button>
                 <label for="">Chose date</label>
                 <input id="" type="date">
             </div>
@@ -302,6 +180,9 @@
             <span class="close">&times;</span>
             <!-- Ajoutez un champ de texte pour la tâche -->
             <input type="text" id="todoDescription" placeholder="Enter your to do...">
+            <span id="descriptionError" style="color: red;"></span>
+            <input type="time" id="todoTime">
+            <span id="timeError" style="color: red;"></span>
             <!-- Ajoutez un bouton pour ajouter la tâche -->
             <button id="addTodoBtn">Add Todo</button>
         </div>
@@ -341,23 +222,107 @@
         let addTodoBtn = document.getElementById("addTodoBtn");
 
         // Associez un gestionnaire d'événement au clic sur le bouton "Add Todo"
+        // Déplacez la déclaration de newTodo à l'intérieur de la fonction addTodoBtn.onclick
         addTodoBtn.onclick = function () {
-            // Récupérez la description de la tâche depuis le champ de texte du modal
+            // Récupérer la description de la tâche depuis le champ de texte du modal
             let todoDescription = document.getElementById("todoDescription").value;
+            // Récupérer l'heure de la tâche depuis le champ de texte du modal
+            let todoTime = document.getElementById("todoTime").value;
 
-            // Créez un nouvel élément de tâche avec la description récupérée
-            let newTodo = document.createElement("div");
-            newTodo.classList.add("have-todo");
-            newTodo.innerHTML = `
+            // Vérifier si la description est vide
+            if (todoDescription.trim() === "") {
+                document.getElementById("descriptionError").innerText = "Le champ de description est requis !";
+            } else {
+                document.getElementById("descriptionError").innerText = ""; // Effacer le message d'erreur s'il n'y en a pas
+            }
+
+            // Vérifier si l'heure est vide
+            if (todoTime.trim() === "") {
+                document.getElementById("timeError").innerText = "Le champ d'heure est requis !";
+            } else {
+                document.getElementById("timeError").innerText = ""; // Effacer le message d'erreur s'il n'y en a pas
+            }
+
+            // Si les deux champs sont remplis, ajoutez le todo
+            if (todoDescription.trim() !== "" && todoTime.trim() !== "") {
+                // Créer un nouvel élément de tâche avec la description et l'heure récupérées
+                let newTodo = document.createElement("div");
+                newTodo.classList.add("have-todo");
+                newTodo.innerHTML = `
             <input id="check" type="checkbox">
-            <input id="description" type="text" style="" value="${todoDescription}">
+            <input id="description" type="text" style="" value="${todoDescription}" readonly>
+            <span>${todoTime}</span>
         `;
 
-            // Ajoutez le nouvel élément de tâche à la liste de tâches
-            todoList.appendChild(newTodo);
+                // Associez un gestionnaire d'événement au double-clic sur le champ de description
+                let descriptionInput = newTodo.querySelector('input[type="text"]');
+                descriptionInput.ondblclick = function () {
+                    descriptionInput.removeAttribute("readonly");
+                };
 
-            // Fermez le modal
-            modal.style.display = "none";
+                // Associez un gestionnaire d'événement à la sortie de focus pour réappliquer l'attribut readonly
+                descriptionInput.addEventListener("focusout", function () {
+                    descriptionInput.setAttribute("readonly", true);
+                });
+
+                // Récupérez la case à cocher
+                let checkbox = newTodo.querySelector('#check');
+
+                // Associez un gestionnaire d'événements change à la case à cocher
+                checkbox.addEventListener('change', function () {
+                    if (checkbox.checked) {
+                        descriptionInput.style.textDecoration = 'line-through';
+                    } else {
+                        descriptionInput.style.textDecoration = 'none';
+                    }
+                });
+
+                // Ajouter le nouvel élément de tâche à la liste de tâches
+                todoList.appendChild(newTodo);
+
+                // Fermer le modal
+                modal.style.display = "none";
+            }
+        }
+
+
+        // Récupérez la case à cocher
+        let checkbox = newTodo.querySelector('#check');
+
+        // Associez un gestionnaire d'événements change à la case à cocher
+        checkbox.addEventListener('change', function () {
+            // Récupérez le champ de description
+            let descriptionInput = newTodo.querySelector('input[type="text"]');
+
+            // Vérifiez si la case à cocher est cochée
+            if (checkbox.checked) {
+                // Barrer le texte de la description
+                descriptionInput.style.textDecoration = 'line-through';
+            } else {
+                // Enlever le barré du texte de la description
+                descriptionInput.style.textDecoration = 'none';
+            }
+        });
+
+        // Récupérez le bouton "Delete"
+        let deleteBtn = document.querySelector(".delbtn");
+
+        // Associez un gestionnaire d'événement au clic sur le bouton "Delete"
+        deleteBtn.onclick = function () {
+            // Récupérez tous les éléments de la liste de tâches
+            let todos = document.querySelectorAll('.have-todo');
+
+            // Parcourez tous les éléments de la liste
+            todos.forEach(todo => {
+                // Récupérez la case à cocher à l'intérieur de cet élément
+                let checkbox = todo.querySelector('#check');
+
+                // Vérifiez si la case à cocher est cochée
+                if (checkbox.checked) {
+                    // Supprimez l'élément de la liste
+                    todo.remove();
+                }
+            });
         }
     </script>
 </body>
