@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/referentiel.css" />
+    <script
+      src="https://kit.fontawesome.com/d2ba3c872c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <input type="checkbox" id="menu_checkbox" />
+
+    <!-- HEADER -->
+    <header class="header">
+      <!-- FLEX-LEFT -->
+      <div class="flex-left">
+        <label for="menu_checkbox">
+          <div><i class="fa fa-bars" aria-hidden="true"></i></div>
+          <div><i class="fa-solid fa-circle-arrow-right"></i></div>
+        </label>
+        <div class="icons">
+          <div>
+            <div>
+              <div id="toggle-btn" class="fas fa-sun"></div>
+            </div>
+          </div>
+        </div>
+        <form action="" method="post" class="search-form">
+          <input
+            type="text"
+            name="searchGlobal"
+            value=""
+            placeholder="Rechercher"
+            maxlength="100"
+          />
+          <button
+            type="submit"
+            name="globalRecherche"
+            class="fas fa-search"
+          ></button>
+        </form>
+      </div>
+      <!-- FLEX-RIGHT -->
+      <div class="flex-right">
+        <div class="date">
+          <input type="date" id="choisir_date" name="date" />
+        </div>
+        <div class="logo">
+          <img src="/assets/img/profile.jpeg" class="image" alt="" />
+          <div class="info">
+            <p>bobo Sow</p>
+            <small id="user-btn">
+              Admin <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile">
+        <a href="profile.html" class="btn">Voir profile</a>
+        <div class="flex-btn">
+          <form action="" method="post">
+            <button type="submit" class="option-btn" name="deconnexion">
+              <i class="fa fa-power-off" aria-hidden="true"></i> Se déconnecter
+            </button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <!-- side-bar -->
+    <div class="side-bar">
+      <div class="logo">
+        <img src="/assets/img/Logo-Sonatel-Academy.png" class="image" alt="" />
+        <h3 class="menu">- MENU</h3>
+      </div>
+      <nav class="navbar">
+        <a href="#"
+          ><i class="fa fa-align-right" aria-hidden="true"></i
+          ><span>Dashboard</span></a
+        >
+        <a href="#"
+          ><i class="fa fa-graduation-cap" aria-hidden="true"></i
+          ><span>Apprenants</span></a
+        >
+        <a href="#"
+          ><i class="fa fa-list-alt" aria-hidden="true"></i>
+          <span>Promos</span></a
+        >
+        <a href="#"
+          ><i class="fa fa-calendar-plus-o" aria-hidden="true"></i
+          ><span>Référentiels</span></a
+        >
+        <a href="#"
+          ><i class="fa fa-user-circle-o" aria-hidden="true"></i
+          ><span>Utilisateurs</span></a
+        >
+        <a href="#"
+          ><i class="fa fa-user-circle-o" aria-hidden="true"></i
+          ><span>Visiteurs</span></a
+        >
+        <a href="#"
+          ><i class="fa fa-user-circle-o" aria-hidden="true"></i
+          ><span>Presences</span></a
+        >
+        <a href="#"
+          ><i class="fa fa-calendar-plus-o" aria-hidden="true"></i
+          ><span>Événements</span></a
+        >
+      </nav>
+    </div>
+    <section class="home-section">
+
+    
+
+<div class="title">
+    <div class="left">Promotions</div>
+    <div class="right">Promos - Création</div>
+</div>
+<div class="content">
+    <div class="liste">
+        <i></i>
+    </div>
+    <div class="checkbox-content">
+        <div class="title-checkbox">Sélectionner un ou plusieurs Référentiels</div>
+        <form action="#" method="post">
+            <input type="text" hidden name="idPromo" id="" value="">
+            <div class="form-group">
+                    <input type="checkbox" id="" name="referentiels[]" value="">
+                    <label for="">REFERENTIEL</label><br>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="" name="referentiels[]" value="">
+                <label for="">DEV</label><br>
+        </div>
+            <div class="buttons">
+                <a class="btn-hover color-7" href="#" style="color: black;">Back</a>
+                <button class="btn-hover color-5">Créer</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+      <footer class="footer">&copy; Sonatel Academy</footer>
+    </section>
+    <div class="fixed-icon">
+      <i class="fa-solid fa-gear"></i>
+    </div>
+  </body>
+  <script src="assets/js/main.js"></script>
+</html>
