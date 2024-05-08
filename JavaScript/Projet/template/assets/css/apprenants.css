@@ -433,7 +433,7 @@
     font-size: 1em;
 }
 
-.modal .btn-checkbox-container:hover {
+/* .modal .btn-checkbox-container:hover {
     opacity: 1;
 }
 
@@ -479,7 +479,7 @@
 .modal #popup_checkbox:not(:checked) + .modal-content .btn-checkbox.prev {
     visibility: hidden;
     pointer-events: none;
-}
+} */
 
 
 
@@ -946,4 +946,15 @@
 /* Effet hover sur les options */
 .custom-select .select-items div:hover {
     background-color: #ddd;
+}
+
+
+.invalid {
+    border-color: red;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 4px;
 }
