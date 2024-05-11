@@ -246,3 +246,59 @@ function afficherEtudiantsFiltres(filteredStudents) {
         bobyApprenant.insertAdjacentHTML("afterbegin", afficherUnApprenant(student));
     });
 }
+
+
+
+// -------------------------------------------- Vendredi tasks ------------------------------------------
+const students = document.querySelector('.apprenantTable');
+const promos = document.querySelector('.promoTable');
+const studentsMenuItem = document.querySelector('.navbar a:nth-child(2)');
+const promosMenuItem = document.querySelector('.navbar a:nth-child(3)');
+
+// recupéré le boutton addbtn et modifier son text content
+const addBtn = document.querySelector('.addBtn');
+const popup = document.querySelector('.modal');
+
+
+promosMenuItem.addEventListener('click', function(e) {
+   e.preventDefault();
+   students.style.display = 'none';
+   promos.style.display = 'block';
+   addBtn.textContent = '+ Nouvelle';
+});
+
+
+studentsMenuItem.addEventListener('click', function(e) {
+   e.preventDefault();
+   students.style.display = 'block';
+   promos.style.display = 'none';
+   addBtn.textContent = '+ Nouveau';
+});
+
+//fonction pour afficher le popup lorsque tu clique sur le button addBtn 
+addBtn.addEventListener('click', function(e) {
+   e.preventDefault();
+   popup.style.display = 'block';
+   // Verifier si le text-content de addBtn si c'est égale à "Nouveau" display: block; le form apprenantForm si c'est "Nouvelle" display: block; le form addpromoForm
+   if (addBtn.textContent === '+ Nouveau') {
+      document.querySelector('#apprenantForm').style.display = 'block';
+      document.querySelector('#addpromoForm').style.display = 'none';
+   } else if (addBtn.textContent === '+ Nouvelle'){
+      document.querySelector('#apprenantForm').style.display = 'none';
+      document.querySelector('#addpromoForm').style.display = 'block';
+   }
+});
+
+
+// Sélection de tous les éléments de fermeture avec la classe ".close"
+const closeButtons = document.querySelectorAll('.close');
+
+// Ajout d'un écouteur d'événements pour chaque bouton de fermeture
+closeButtons.forEach(closeButton => {
+    closeButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        const popup = this.closest('.modal');
+        popup.style.display = 'none';
+    });
+});
+   
