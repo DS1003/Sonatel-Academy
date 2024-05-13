@@ -39,28 +39,28 @@ const DB = {
     {
       id_etudiant: 1,
       image: "https://cdn-icons-png.flaticon.com/128/3135/3135715.png",
-      prenom: "Jean",
-      nom: "Dupont",
-      telephone: "0123456789",
-      date_naissance: "2000-01-01",
-      numero_carte_identite: "1234567890",
+      prenom: "Seydina Mouhammad",
+      nom: "Diop",
+      telephone: "+221705813257",
+      date_naissance: "1999-10-17",
+      numero_carte_identite: "1752199901212",
       sexe: "M",
-      lieuNaissance: "Paris",
+      lieuNaissance: "Dakar",
       referentiel: "dev_web",
-      id_promo: 1,
+      id_promo: 6,
     },
     {
       id_etudiant: 2,
-      image: "https://cdn-icons-png.flaticon.com/128/3135/3135715.png",
-      prenom: "Marie",
-      nom: "Durand",
-      telephone: "0987654321",
-      date_naissance: "1999-05-15",
-      numero_carte_identite: "0987654321",
+      image: "https://cdn-icons-png.flaticon.com/128/6997/6997662.png",
+      prenom: "Ndeye Amy",
+      nom: "Sène",
+      telephone: "+221771443400",
+      date_naissance: "2004-04-23",
+      numero_carte_identite: "1751200401717",
       sexe: "F",
-      lieu_naissance: "Lyon",
-      referentiel: "dev_data",
-      id_promo: 2,
+      lieu_naissance: "Paris",
+      referentiel: "dev_web",
+      id_promo: 6,
     },
   ],
   promotions: [
@@ -83,7 +83,7 @@ const DB = {
       nom: "Prolotion 3",
       dateDebut: "01/01/2022",
       dateFin: "01/01/2023",
-      etat: true,
+      etat: false,
     },
     {
       id_promo: 4,
@@ -104,7 +104,7 @@ const DB = {
       nom: "Prolotion 6",
       dateDebut: "01/01/2022",
       dateFin: "01/01/2023",
-      etat: false,
+      etat: true,
     },
   ],
   referentiels: [
@@ -170,7 +170,7 @@ function validerNomPrenom(champ, nomChamp) {
     afficherMessageErreur(
       champ,
       nomChamp +
-        " doit contenir uniquement des lettres (minimum 5 caractères et maximum 20 caractères)"
+      " doit contenir uniquement des lettres (minimum 5 caractères et maximum 20 caractères)"
     );
     return false;
   }
@@ -912,11 +912,9 @@ function afficherPromotions() {
        </td>
        <td class="bloc action">
          <div class="col-haut"></div>
-         <button class="btn-activer ${
-           promotion.etat ? "active" : ""
-         }" data-id="${promotion.id_promo}">${
-      promotion.etat ? "Désactiver" : "Activer"
-    }</button>
+         <button class="btn-activer ${promotion.etat ? "active" : ""
+      }" data-id="${promotion.id_promo}">${promotion.etat ? "Active" : "Désactive"
+      }</button>
        </td>
      `;
     containerPromo.appendChild(tr);
