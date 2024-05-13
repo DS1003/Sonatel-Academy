@@ -156,7 +156,58 @@ function validerFormulaire() {
 /// Note base de donnée
 const BASEDEDONNEE = {
    etudiant: [
-
+      {
+          image: "https://randomuser.me/api/portraits/women/1.jpg",
+          prenom: "Jane",
+          nom: "Doe",
+          email: "jane.doe",
+          telephone: "0612345678",
+          sexe: "F",
+          dateNaissance: "1990-01-01",
+          lieuNaissance: "Paris",
+          cni: "123456789",
+          referentiel: "web",
+          promo: "p1"
+      },
+      {
+         image: "https://randomuser.me/api/portraits/men/1.jpg",
+         prenom: "John",
+         nom: "Doe",
+         email: "john.doe",
+         telephone: "0612345678",
+         sexe: "M",
+         dateNaissance: "1990-01-01",
+         lieuNaissance: "Paris",
+         cni: "123456789",
+         referentiel: "web",
+         promo: "p1"
+      },
+      {
+         image: "https://randomuser.me/api/portraits/women/2.jpg",
+         prenom: "Jane",
+         nom: "Doe",
+         email: "jane.doe",
+         telephone: "0612345678",
+         sexe: "F",
+         dateNaissance: "1990-01-01",
+         lieuNaissance: "Paris",
+         cni: "123456789",
+         referentiel: "web",
+         promo: "p1"
+      },
+      {
+         image: "https://randomuser.me/api/portraits/men/2.jpg",
+         prenom: "John",
+         nom: "Doe",
+         email: "john.doe",
+         telephone: "0612345678",
+         sexe: "M",
+         dateNaissance: "1990-01-01",
+         lieuNaissance: "Paris",
+         cni: "123456789",
+         referentiel: "web",
+         promo: "p1"
+      }
    ],
    referentiel: [
        {
@@ -186,7 +237,15 @@ const BASEDEDONNEE = {
            libelle: "Promotion 1",
            debut: "2019-02-01",
            fin: "2019-10-01",
-       }
+           etat: 'Désactive'
+         },
+         {
+            id: "p2",
+            libelle: "Promotion 2",
+            debut: "2020-02-01",
+            fin: "2020-10-01",
+            etat: 'Active'
+     }
    ]
 }
 
@@ -246,3 +305,111 @@ function afficherEtudiantsFiltres(filteredStudents) {
         bodyapprenant.insertAdjacentHTML("afterbegin", afficherUnApprenant(student));
     });
 }
+
+
+
+// -------------------------------------------- Vendredi tasks ------------------------------------------
+const students = document.querySelector('.apprenantTable');
+const promos = document.querySelector('.promoTable');
+const studentsMenuItem = document.querySelector('.navbar a:nth-child(2)');
+const promosMenuItem = document.querySelector('.navbar a:nth-child(3)');
+
+// recupéré le boutton addbtn et modifier son text content
+const addBtn = document.querySelector('.addBtn');
+const popup = document.querySelector('.modal');
+
+
+promosMenuItem.addEventListener('click', function(e) {
+   e.preventDefault();
+   students.style.display = 'none';
+   promos.style.display = 'block';
+   addBtn.textContent = '+ Nouvelle';
+});
+
+
+studentsMenuItem.addEventListener('click', function(e) {
+   e.preventDefault();
+   students.style.display = 'block';
+   promos.style.display = 'none';
+   addBtn.textContent = '+ Nouveau';
+});
+
+//fonction pour afficher le popup lorsque tu clique sur le button addBtn 
+addBtn.addEventListener('click', function(e) {
+   e.preventDefault();
+   popup.style.display = 'block';
+   // Verifier si le text-content de addBtn si c'est égale à "Nouveau" display: block; le form apprenantForm si c'est "Nouvelle" display: block; le form addpromoForm
+   if (addBtn.textContent === '+ Nouveau') {
+      document.querySelector('#apprenantForm').style.display = 'block';
+      document.querySelector('#addpromoForm').style.display = 'none';
+   } else if (addBtn.textContent === '+ Nouvelle'){
+      document.querySelector('#apprenantForm').style.display = 'none';
+      document.querySelector('#addpromoForm').style.display = 'block';
+   }
+});
+
+
+// Sélection de tous les éléments de fermeture avec la classe ".close"
+const closeButtons = document.querySelectorAll('.close');
+
+// Ajout d'un écouteur d'événements pour chaque bouton de fermeture
+closeButtons.forEach(closeButton => {
+    closeButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        const popup = this.closest('.modal');
+        popup.style.display = 'none';
+    });
+});
+
+
+
+
+
+// Sélection de l'élément contenant la table des promotions
+const promoTable = document.querySelector('.promoTable tbody');
+
+// Fonction pour générer une ligne de table pour une promotion
+function generatePromoTableRow(promo) {
+    return `
+        <tr class="line">
+            <td class="bloc">
+                <div class="col-bas" style="color: rgb(29, 109, 29)">
+                    ${promo.libelle}
+                </div>
+            </td>
+            <td class="bloc">
+                <div class="col-bas" style="color: rgb(29, 109, 29)">
+                    ${promo.debut}
+                </div>
+            </td>
+            <td class="bloc">
+                <div class="col-bas email">${promo.fin}</div>
+            </td>
+            <td class="bloc">
+                <div class="col-bas email"><button class="addBtn btn-hover color-5" > <!-- onclick="window.location.href='#popup'" -->
+                ${promo.etat}
+              </button></div>
+            </td>
+            <td class="bloc">
+                <div class="col-haut"></div>
+                <input type="checkbox" id="my-checkbox-${promo.id}" />
+                <label for="my-checkbox-${promo.id}"></label>
+            </td>
+        </tr>
+    `;
+}
+
+// Fonction pour remplir la table des promotions
+function fillPromoTable() {
+    // Vider le contenu actuel de la table
+    promoTable.innerHTML = '';
+
+    // Parcourir toutes les promotions dans BASEDEDONNEE.promotion
+    BASEDEDONNEE.promotion.forEach(promo => {
+        // Générer une ligne de table pour chaque promotion et l'ajouter à la table
+        promoTable.insertAdjacentHTML('beforeend', generatePromoTableRow(promo));
+    });
+}
+
+// Appel de la fonction pour remplir la table des promotions au chargement de la page
+fillPromoTable();

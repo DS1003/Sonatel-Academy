@@ -7,6 +7,8 @@
   <title>Document</title>
   <link rel="stylesheet" href="/JavaScript/Projet/template/assets/css/main.css" />
   <link rel="stylesheet" href="/JavaScript/Projet/template/assets/css/apprenants.css" />
+  <link rel="stylesheet" href="/JavaScript/Projet/template/assets/css/promotion.css" />
+  <link rel="stylesheet" href="/JavaScript/Projet/template/assets/css/promotions.css" />
   <script src="https://kit.fontawesome.com/d2ba3c872c.js" crossorigin="anonymous"></script>
 </head>
 
@@ -41,7 +43,7 @@
       <div class="logo">
         <img src="/assets/img/profile.jpeg" class="image" alt="" />
         <div class="info">
-          <p>bobo Sow</p>
+          <p>Seydina Mouhammad Diop</p>
           <small id="user-btn">
             Admin <i class="fa fa-angle-down" aria-hidden="true"></i>
           </small>
@@ -79,7 +81,8 @@
       <a href="#"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i><span>Événements</span></a>
     </nav>
   </div>
-  <section class="home-section">
+  /* ------------------------------------------ Apprenants ---------------------------------------------------*/
+  <section class="home-section" style="display: block;">
     <div class="title">
       <div class="left">Apprenants</div>
       <div class="right">Promos * Liste * Détails - Apprenants</div>
@@ -120,7 +123,7 @@
           <div class="line2">
             <div class="div1">Liste Des Apprenants <span>(10)</span></div>
             <div class="buttons">
-              <button class="btn-hover color-5" onclick="window.location.href='#popup'">
+              <button class="addBtn btn-hover color-5" > <!-- onclick="window.location.href='#popup'" -->
                 + Nouveau
               </button>
               <button class="btn-hover color-2" onclick="window.location.href='#popupFILE'">
@@ -135,7 +138,7 @@
           <div class="line3">
             <span><i class="fa-solid fa-magnifying-glass"></i></span>
             <form action="" method="post">
-              <input type="text" placeholder="Filtrer" name="search" value=""/>
+              <input type="text" placeholder="Filtrer" name="search" value="" />
             </form>
           </div>
 
@@ -143,7 +146,7 @@
             <img src="assets/img/image.png" width="5%" height="5%" />
           </div>
 
-          <div class="container-table">
+          <div class="container-table apprenantTable">
             <table class="line5">
               <thead>
                 <tr>
@@ -245,11 +248,57 @@
               </div>
             </div>
           </div>
+          <!-- ----------------------------------- Table - Promotions ----------------------------------- -->
+          <div class="container-table promoTable" style="display: none;">
+           <table class="line5">
+             <thead>
+               <tr>
+                 <th class="titre" data-label="Libelle">Libelle</th>
+                 <th class="titre" data-label="date-debut">Date Début</th>
+                 <th class="titre" data-label="date-fin">Date FIn</th>
+                 <th class="titre" data-label="date-fin">Etat</th>
+                 <th class="titre" data-label="actions">Actions</th>
+               </tr>
+             </thead>
+             <tbody>
+
+               
+               
+             </tbody>
+           </table>
+           <div class="footer-table">
+             <div class="items-per-page">
+               <label>Items par page : </label>
+               <a href="mypage.php?itemsPerPage=10">10</a>
+               <a href="mypage.php?itemsPerPage=20">20</a>
+               <a href="mypage.php?itemsPerPage=30">30</a>
+             </div>
+             <div class="pagination">
+               <a href="#" class="page-link prev"
+                 ><i class="fas fa-angle-left"></i
+               ></a>
+               <a href="#" class="page-link active">0</a>
+               <a href="#" class="page-link">1</a>
+               <a href="#" class="page-link">2</a>
+               <a href="#" class="page-link next"
+                 ><i class="fas fa-angle-right"></i
+               ></a>
+             </div>
+           </div>
+         </div>
+
+
         </div>
       </div>
     </div>
     <footer class="footer">&copy; Sonatel Academy</footer>
   </section>
+
+
+
+
+
+
 
   <div class="fixed-icon">
     <i class="fa-solid fa-gear"></i>
@@ -257,13 +306,13 @@
 
   <div id="popup" class="modal">
     <input type="checkbox" id="popup_checkbox">
-    <form id="apprenantForm" class="modal-content">
+
+    <form id="apprenantForm" class="modal-content" style="display: block;">
       <div class="head">
         <a href="#" class="close">×</a>
         <h1>Nouvel Apprenant</h1>
       </div>
       <div class="section informations-perso">
-
         <div class="stutdent">
           <div class="line flex">
             <span><i class="fa-solid fa-1"></i></span>
@@ -321,7 +370,8 @@
             </div>
             <div>
               <label for="lieu_naissance">Lieu de Naissance</label>
-              <input type="text" id="lieu_naissance" name="lieuNaissance" placeholder="Entrer le lieu de naissance" required>
+              <input type="text" id="lieu_naissance" name="lieuNaissance" placeholder="Entrer le lieu de naissance"
+                required>
               <span class="error-message" id="lieu-error"></span>
             </div>
             <div>
@@ -361,6 +411,64 @@
         </div>
       </div>
     </form>
+
+    <!-- ------------------------- ajout promos ----------------------------- -->
+    <form id="addpromoForm" class="modal-content" style="display: none;">
+      <div class="head">
+        <a href="#" class="close" id="closePromo2">×</a>
+        <h1>Nouvelle Promotion</h1>
+      </div>
+      <div class="form-group">
+        <div class="libelle">
+          <label for="libelle">Libelle</label>
+          <input
+            type="text"
+            id="libelle"
+            name="libelle"
+            placeholder="Entrer le labelle"
+          />
+
+          <div class="first">message</div>
+        </div>
+        <div class="date-container">
+          <div class="left">
+            <label for="date_debut">Date Début</label>
+            <input
+              type="date"
+              name="date_debut"
+              id="date_debut"
+              value="<?php echo date('Y-m-d'); ?>"
+              min="<?php echo date('Y-m-d'); ?>"
+            />
+          </div>
+
+          <div class="right">
+            <label for="date_fin">Date Fin</label>
+            <input
+              type="date"
+              name="date_fin"
+              id="date_fin"
+              value=""
+              min=""
+            />
+          </div>
+        </div>
+      
+        <div class="first">
+          message
+        </div>
+      
+        <div class="buttons">
+          <button class="btn-hover color-7" name="addRef" type="submit">
+            Ajouter Réferenciel(s)
+          </button>
+          <button class="btn-hover color-5" type="submit">
+            Créer Promotion
+          </button>
+        </div>
+      </div>
+    </form>
+
   </div>
 
 
