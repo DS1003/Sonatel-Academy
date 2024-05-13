@@ -114,18 +114,18 @@ function afficherUnApprenant(user) {
 
 
 // On récupérére la où on doit afficher les apprenants
-const bobyApprenant = document.getElementById("containerApprenant");
-console.log(bobyApprenant);
+const bodyapprenant = document.getElementById("containerApprenant");
+console.log(bodyapprenant);
 
 // Fonction qui permet d'afficher tout les apprenants
 function afficherToutLesApprenants() {
 
    // On enléve le contenue de là où on doit mettre les apprenants
-   bobyApprenant.innerHTML = "";
+   bodyapprenant.innerHTML = "";
 
    // On boucle sur la liste des apprenants
    BASEDEDONNEE.etudiant.forEach(etudiant => {
-       bobyApprenant.insertAdjacentHTML("afterbegin", afficherUnApprenant(etudiant));
+       bodyapprenant.insertAdjacentHTML("afterbegin", afficherUnApprenant(etudiant));
    });
 }
 
@@ -239,10 +239,10 @@ searchInput.addEventListener("input", function() {
 // Fonction pour afficher les étudiants filtrés
 function afficherEtudiantsFiltres(filteredStudents) {
     // Effacer le contenu actuel du conteneur des étudiants
-    bobyApprenant.innerHTML = "";
+    bodyapprenant.innerHTML = "";
 
     // Boucler à travers les étudiants filtrés et les afficher
     filteredStudents.forEach(student => {
-        bobyApprenant.insertAdjacentHTML("afterbegin", afficherUnApprenant(student));
+        bodyapprenant.insertAdjacentHTML("afterbegin", afficherUnApprenant(student));
     });
 }

@@ -1,0 +1,284 @@
+
+
+  .content .liste  {
+    height: 35rem;
+    border: 1px solid #dad9d9;
+    width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2.5em;
+    margin-top: 2%;
+  }
+
+     .content .liste::before{
+      content: "1";
+      text-align: center;
+      position: relative;
+      border-radius: 50%;
+      background-color: var(--main-color);
+      color: var(--black);
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 1rem;
+      height: 20px;
+  }
+
+     .content .liste::after{
+      content: "2";
+      text-align: center;
+      position: relative;
+      border-radius: 50%;
+      background-color: var(--main-color);
+      color: var(--black);
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 1rem;
+      height: 20px;
+  }
+
+  .content .forms {
+    margin-left: 2rem;
+    position: relative;
+    top: 1.3rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-content: center;
+  }
+  
+  .content .promotion, .referenciel {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding-left: 1rem;
+    width: 100%;
+    height: 2rem;
+    color: var(--white);
+  }
+
+  .content .referenciel{
+      margin-top: 2rem;
+  }
+  
+  .formulaire {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .formulaire .form-group {
+    width: 99%;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+  }
+  
+  .formulaire .form-group label {
+    display: block;
+    position: relative;
+    top: 0px;
+    font-size: 1.8rem;
+    /* Réduction de la taille de la police */
+    margin: 15px;
+    /* Réduction de la marge inférieure */
+    padding: 0;
+    width: 100%;
+    border-radius: 10px;
+    color: var(--black);
+  }
+  
+  .formulaire .form-group input[type="text"] {
+    width: calc(100% - 20px);
+    /* Ajustement de la largeur des champs */
+    height: 50px;
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin-top: 4px;
+    /* Réduction de la marge supérieure */
+    background-color: var(--light-bg);
+  }
+  
+  .date-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 98.5%;
+  }
+  
+  .left,
+  .right {
+    width: 49.3%;
+  }
+  
+  .formulaire [type="date"] {
+    background: var(--white) url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 98% 50% no-repeat;
+  }
+  
+  .formulaire [type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+.formulaire [type="date"]::-webkit-calendar-picker-indicator {
+opacity: 0;
+width: 80%;
+}
+
+.formulaire .form-group .date-container input {
+border: 1px solid #c4c4c4;
+border-radius: 10px;
+height: 45px;
+font-size: 2rem;
+padding-left: 3rem;
+width: 100%;
+margin-bottom: 6px;
+background-color: var(--light-bg);
+}
+
+.buttons {
+display: flex;
+justify-content: space-between;
+margin: 0 30px;
+}
+
+
+.btn-hover.color-7 {
+background-image: linear-gradient(to right, #6253e1, #4a3e8a, #A3A1FF, #31a4c1);
+box-shadow: 0 4px 15px 0 rgba(56, 47, 176, 0.75);
+}
+
+.btn-hover.color-5 {
+background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+
+@media (max-width: 768px) {
+.content {
+padding: 1rem;
+}
+
+.content .liste {
+left: 1rem;
+border: none;
+}
+
+.content .liste::before {
+left: 0;
+top: -1rem;
+font-size: 1.5rem;
+width: 3rem;
+height: 3rem;
+}
+
+.content .liste::after {
+left: 0;
+top: 45rem;
+font-size: 1.5rem;
+width: 3rem;
+height: 3rem;
+}
+
+.content .forms {
+margin-left: 1rem;
+top: 0;
+}
+
+.content .forms .promotion,
+.referenciel {
+font-size: 1.2rem;
+padding-left: 0;
+}
+
+.formulaire .form-group {
+height: auto;
+}
+
+.formulaire .form-group label {
+font-size: 1.6rem;
+margin: 10px 0;
+}
+
+.formulaire .form-group input[type="text"] {
+height: 50px;
+}
+
+.date-container {
+flex-direction: column;
+}
+
+.left,
+.right {
+width: 100%;
+margin-bottom: 10px;
+}
+
+.formulaire .form-group .date-container input {
+height: 50px;
+}
+
+.buttons {
+flex-direction: column;
+}
+
+.btn-hover {
+width: 100%;
+margin: 10px 0;
+}
+}
+  .first {
+      color: var(--red);
+      font-size: 1.8em;
+      background-color: #fad4df;
+      text-align: center;
+      width: 30%;
+      margin-left: 35%;
+  }
+
+
+
+
+
+  #popupPromo {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  #popupPromo form {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    box-shadow: 0px 0px 10px #000;
+  }
+  
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  

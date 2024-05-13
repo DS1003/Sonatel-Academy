@@ -1,0 +1,794 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+  --main-color: #008f89;
+  --red: #e74c3c;
+  --orange: #f39c12;
+  --light-color: #888;
+  --light-bg: #eee;
+  --black: #3a3a3a;
+  --white: #ffffff;
+  --border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  --gray: #3a3a3b;
+  --darkgray: #d5d7da;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--light-bg);
+}
+
+body.dark{
+    --light-color:#aaa;
+    --light-bg:#333;
+    --black:#fff;
+    --white:#222;
+    --border:.1rem solid rgba(255,255,255,.2);
+ }
+
+/* side-bar */
+.side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 35rem;
+    height: 100vh;
+    background-color: var(--white);
+    transition: all 0.3s ease;
+    z-index: 5;
+  }
+
+.side-bar .logo {
+  padding: 2rem 0 0 0rem;
+  text-align: left;
+}
+
+.side-bar .logo .image {
+  height: 10rem;
+  width: 30rem;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.side-bar .logo .menu {
+  font-size: 2rem;
+  color: var(--light-color);
+  margin-top: 20px;
+}
+
+.side-bar .navbar a {
+  display: block;
+  padding: 1.2rem;
+  padding-left: 4rem;
+  font-size: 2rem;
+  margin: 0 2rem;
+  border-radius: 5px;
+}
+
+.side-bar .navbar a i {
+  margin-right: 1rem;
+  color: var(--light-color);
+  transition: 0.2s linear;
+}
+
+.side-bar .navbar a span {
+  color: var(--black);
+}
+
+.side-bar .navbar a:hover {
+  background-color: var(--main-color);
+}
+
+.side-bar .navbar a:hover i {
+  margin-right: 2.5rem;
+  color: var(--light-bg);
+}
+
+.side-bar .navbar a:hover span {
+  margin-right: 2.5rem;
+  color: var(--light-bg);
+  font-weight: bold;
+}
+
+.side-bar.active {
+  left: -30rem;
+}
+
+/* header */
+/* Style du header */
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80.5%;
+    background-color: var(--white);
+    filter: drop-shadow(0 0 10px var(--light-color));
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 1em;
+    flex-wrap: wrap;
+    transition: all 0.3s ease;
+    z-index: 2;
+  }
+
+/* HEADER FLEX-LEFT */
+
+.header .flex-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+#menu_checkbox {
+  visibility: hidden;
+}
+
+.header label {
+  position: relative;
+  top: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.header label div {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  transition: 0.3s ease transform, 0.3s ease top, 0.3s ease width,
+    0.3s ease right;
+  border-radius: 2px;
+  font-size: 3.3rem;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.header .flex-left {
+  display: flex;
+  align-items: center;
+}
+
+.header .icons {
+  margin-right: 20px;
+}
+
+#menu_checkbox:checked ~ .header label div:first-child {
+  display: none;
+}
+
+#menu_checkbox:checked ~ .header label div:nth-child(2) {
+  display: block;
+}
+
+#menu_checkbox:not(:checked) ~ .header label div:first-child {
+  display: block;
+}
+
+#menu_checkbox:not(:checked) ~ .header label div:nth-child(2) {
+  display: none;
+}
+
+#menu_checkbox:checked ~ .header {
+  width: 95.5%;
+  left: 4%;
+}
+
+#menu_checkbox:checked ~ .header {
+  width: 95.5%;
+  left: 4%;
+}
+
+#menu_checkbox:checked ~ .home-section {
+    width: 95%;
+    left: 4%;
+    margin-left: 0;
+}
+
+#menu_checkbox:checked ~ .footer {
+  width: 95%;
+  left: 4%;
+  margin-left: 0;
+}
+
+#menu_checkbox:checked ~ .side-bar {
+  left: -29rem;
+  transition: 0.2s linear;
+}
+
+#menu_checkbox:checked ~ .side-bar .navbar a {
+  display: block;
+  position: relative;
+  left: 64%;
+  width: 0;
+}
+
+#menu_checkbox:checked ~ .side-bar .navbar a i {
+  margin-right: 1rem;
+  color: var(--light-color);
+  transition: 0.2s linear;
+  font-size: 4rem;
+  margin-left: 1.5rem;
+}
+
+#menu_checkbox:checked ~ .side-bar .navbar a span {
+  display: none;
+}
+
+#menu_checkbox:checked ~ .side-bar .navbar a:hover i {
+  margin-right: 2.5rem;
+  color: var(--main-color);
+}
+
+#menu_checkbox:checked ~ .side-bar .logo {
+  display: none;
+}
+
+/* DARk MODE STYLE*/
+
+.header .flex-left .icons div {
+    font-size: 3rem;
+    color: var(--black);
+    background-color: var(--light-bg);
+    border-radius: 20rem;
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .flex-left .icons div:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/*END DARk MODE STYLE*/
+
+/* HEADER SEARCH FORM */
+
+.header .flex-left .search-form {
+  width: 30rem;
+  border-radius: 2rem; /* More moderate border-radius */
+  background-color: var(--light-bg);
+  padding: 1rem 1.2rem; /* Adjusted padding for a better layout */
+  display: flex;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.header .flex-left .search-form input {
+  width: calc(100% - 3rem); /* Adjust width to leave space for button */
+  font-size: 1.6rem; /* Adjusted for better readability */
+  color: var(--black);
+  background: none;
+  border: none; /* Remove any default border */
+  outline: none; /* Remove focus outline */
+}
+
+.header .flex-left .search-form button {
+  width: 3rem; /* Fixed width for the button */
+  background: none;
+  border: none; /* Remove any default border */
+  font-size: 2rem; /* Icon size */
+  cursor: pointer;
+  color: var(--main-color);
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.header .flex-left .search-form button:hover,
+.header .flex-left .search-form input:focus + button {
+  color: var(--highlight-color); /* Highlight color on hover/focus */
+}
+
+.header .flex-left .search-form:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* HEADER FLEX-RIGHT */
+
+.header .flex-right {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+input[type="date"] {
+  width: 100%;
+  margin: 0 auto;
+  background: var(--light-bg);
+  color: var(--main-color);
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s; /* Animations pour la bordure et l'ombre */
+}
+
+input[type="date"]:hover {
+  border-color: #67c57a; /* Couleur de bordure au survol */
+  box-shadow: 0 0 8px 0 #67c57a; /* Ombre autour de l'input au survol */
+}
+
+.flex-right .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 20px;
+  cursor: pointer;
+  color:var(--black)
+}
+
+.flex-right .logo .image {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: contain;
+  margin-right: 1rem;
+}
+
+.flex-right .logo .info {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.flex-right .logo p {
+  color: var(--main-color);
+}
+
+
+.header .profile {
+    position: absolute;
+    top: 105%;
+    right: 0.5rem;
+    background-color: #ada9a9;
+    border-radius: .8rem;
+    padding: 1.5rem;
+    text-align: center;
+    overflow: hidden;
+    transform-origin: top right;
+    transform: scale(0);
+    transition: .2s linear;
+    width: 30rem;
+
+}
+
+.header .profile.active {
+    transform: scale(1);
+}
+
+.header .btn,
+.header .option-btn {
+    border-radius: .5rem;
+    color: #323131;
+    font-size: 1.8rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    padding: 1rem 3rem;
+    text-align: center;
+}
+
+.header .btn,
+.header .option-btn {
+    display: block;
+    width: 100%;
+}
+
+.header .option-btn:hover {
+    background-color: #f1d1d1;
+    color: var(--red);
+}
+
+.header .btn:hover {
+    background-color: #e6d9c7;
+    color: #dd8c49;
+    font-weight: bold;
+}
+
+/* END HEADER */
+
+/* START SECTION */
+
+.home-section {
+    position: relative;
+    margin: 5px .7rem 2px 37.2rem;
+    padding: 0;
+    top: 80px;
+    right: 10px;
+    transition: all 0.3s ease;
+}
+
+.home-section .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--light-bg);
+    padding: 2rem 0;
+    color: var(--black);
+    font-size: 2rem;
+}
+
+.home-section .title .left {
+    font-weight: bold;
+    color: var(--black);
+}
+
+.home-section .title .right {
+    font-size: 1.5rem;
+    text-align: end;
+}
+
+.content {
+    background-color: var(--white);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+/* START SRYLE TABLE */
+.container-table {
+    box-shadow: 0 0 10px var(--black);
+    font-family: 'Arial', sans-serif;
+  
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid var(--white);
+}
+
+th {
+    background-color: var(--light-bg);
+    color: var(--black);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+
+.line {
+    font-size: 1.9em;
+}
+
+tr:nth-child(even) {
+    background-color: var(--light-bg);
+}
+
+tr:hover {
+    background-color: var(--light-bg);
+}
+
+.line5 input{
+    display: none;
+}
+
+.line5 input[type="checkbox"] + label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-color: var(--white);
+    border: 2px solid var(--light-color);
+    border-radius: 3px;
+    vertical-align: middle;
+    transition: background-color 0.3s;
+}
+
+.line5 input[type="checkbox"]:checked + label::before {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.line5 input[type="checkbox"]:checked + label::after {
+    content: '✓';
+    font-size: 14px;
+    color: var(--white);
+    position: absolute;
+    left: 4px;
+    top: 1px;
+}
+
+.footer-table {
+    padding: 10px;
+    background-color: var(--white);
+    border-top: 1px solid var(--black);
+    text-align: right;
+    height: 50px;
+}
+
+
+@media screen and (max-width: 768px) {
+    thead {
+        display: none;
+    }
+
+    tbody, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    td {
+        text-align: right;
+        padding-left: 50%;
+        text-align: right;
+        position: relative;
+    }
+
+    td::before {
+        position: absolute;
+        top: 12px;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    td:nth-of-type(1)::before { content: "Image"; }
+    td:nth-of-type(2)::before { content: "Nom"; }
+    td:nth-of-type(3)::before { content: "Prénom"; }
+    td:nth-of-type(4)::before { content: "Email"; }
+    td:nth-of-type(5)::before { content: "Genre"; }
+    td:nth-of-type(6)::before { content: "Téléphones"; }
+    td:nth-of-type(7)::before { content: "Référentiels"; }
+    td:nth-of-type(8)::before { content: "Actions"; }
+}
+
+/* END SRYLE TABLE */
+
+/* END SECTION */
+
+/* FOOTER */
+.footer {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--white);
+  text-align: center;
+  font-size: 2rem;
+  padding: 2.5rem 0;
+  color: var(--black);
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.footer span {
+  color: var(--main-color);
+}
+
+.fixed-icon {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: darkcyan;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.6;
+}
+
+/* START STYLE PAGINATION */
+.items-per-page {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    border-radius: 4px;
+}
+
+.items-per-page label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.items-per-page a, .pagination a {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    line-height: 1.25;
+    color: #495057; /* Utilisation directe de la couleur */
+    background-color: #fff; /* Fond blanc */
+    border: 1px solid #dee2e6; /* Bordure standard */
+    text-decoration: none;
+    margin-left: -1px; /* Chevauchement des liens */
+}
+
+.items-per-page a:first-child, .pagination a:first-child {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.items-per-page a:last-child, .pagination a:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.items-per-page a.active, .pagination a.active {
+    z-index: 1;
+    color: #fff; /* Texte blanc pour l'élément actif */
+    background-color: var(--main-color); /* Couleur principale pour l'arrière-plan actif */
+    border-color: var(--main-color); /* Bordure de la même couleur que le fond actif */
+}
+
+.items-per-page a:hover:not(.active), .pagination a:hover:not(.active) {
+    color: #007bff; /* Couleur bleue au survol pour les liens non actifs */
+    background-color: #e9ecef; /* Fond légèrement gris au survol */
+    border-color: #dee2e6; /* Bordure standard au survol */
+}
+
+.footer-table {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pagination {
+    display: flex; /* Alignement horizontal des liens de pagination */
+    float: right; /* Alignement à droite pour la pagination */
+}
+
+/* END STYLE PAGINATION */
+
+
+
+
+.btn-hover {
+    width: 150px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    margin: 5px;
+    height: 45px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 30px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+/* START STYLE ALL BUTTON */
+
+
+
+
+
+
+/* Pour les écrans jusqu'à 1900px */
+@media (max-width: 1700px) {
+    body {
+      padding-left: 0;
+    }
+  
+    .side-bar {
+      left: -29rem; /* Cache le sidebar à gauche */
+      transition: left 0.2s linear; /* Transition pour l'animation */
+    }
+  
+    .header {
+      width: 94.4%; /* Ajustement de la largeur du header */
+      left: 5%; /* Ajustement de la position gauche */
+    }
+
+
+  
+    .home-section {
+        width: 94.4%; /* Ajustement de la largeur du header */
+        left: 5%; /* Ajustement de la position gauche */
+        margin-left: 0;
+    }
+  
+    .footer {
+        width: 94.4%; /* Ajustement de la largeur du header */
+        left: 5%; /* Ajustement de la position gauche */
+        margin-left: 0;
+    }
+  
+    .side-bar .navbar a {
+      display: block; /* Affiche les liens comme blocs */
+      position: relative;
+      left: 64%; /* Position relative à gauche pour aligner les icônes */
+      width: 0; /* Largeur initiale */
+    }
+  
+    .side-bar .navbar a i {
+      margin-right: 1rem;
+      color: var(--light-color);
+      font-size: 4rem; /* Agrandissement de la taille de l'icône */
+      margin-left: 1.5rem; /* Marge gauche */
+      transition: color 0.2s linear; /* Transition pour le changement de couleur */
+    }
+  
+    .side-bar .navbar a span {
+      display: none; /* Masque le texte des liens */
+    }
+  
+    .side-bar .navbar a:hover i {
+      margin-right: 2.5rem; /* Marge droite au survol */
+      color: var(--main-color); /* Couleur au survol */
+    }
+  
+    .side-bar .logo {
+      display: none; /* Masque le logo dans le sidebar */
+    }
+  }
+  
+  /* Pour les écrans jusqu'à 1000px */
+  @media (max-width: 1000px) {
+    html {
+      font-size: 55%; /* Réduction de la taille de base pour les petits écrans */
+    }
+  }
+  
