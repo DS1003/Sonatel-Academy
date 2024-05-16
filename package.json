@@ -1,0 +1,23 @@
+{
+  "name": "sonatel-academy",
+  "version": "1.0.0",
+  "description": "## i'm Seydina Mouhammad Diop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DS1003/Sonatel-Academy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DS1003/Sonatel-Academy/issues"
+  },
+  "homepage": "https://github.com/DS1003/Sonatel-Academy#readme",
+  "dependencies": {
+    "typescript": "^5.4.5"
+  }
+}
